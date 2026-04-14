@@ -9,7 +9,7 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata = buildMetadata({
   title: "Portfólio com projetos publicados",
   description:
-    "Veja projetos reais da WEBFORJA já publicados, com contexto comercial, solução desenvolvida e links oficiais dos sites no ar.",
+    "Veja projetos reais da WEBFORJA já publicados, com contexto do cliente, solução criada e links oficiais dos sites no ar.",
   path: "/portfolio",
 });
 
@@ -19,10 +19,10 @@ export default function PortfolioPage() {
       <PageHero
         bullets={[
           "Três projetos reais publicados com link oficial",
-          "Cases com objetivo, solução e highlights em leitura rápida",
-          "Portfólio pronto para crescer sem espaço para placeholder",
+          "Cases com objetivo, solução e destaques em leitura rápida",
+          "Portfólio pronto para crescer com novos projetos",
         ]}
-        description="O portfólio da WEBFORJA mostra projetos publicados com contexto suficiente para o visitante entender rápido o que foi construído, para quem foi feito e como a solução ajuda a vender melhor."
+        description="O portfólio da WEBFORJA mostra projetos publicados com contexto real para o visitante entender rápido o que foi construído, para quem foi feito e como a solução ajuda o negócio."
         eyebrow="Portfólio"
         title="Projetos reais no ar, apresentados de forma clara, comercial e confiável"
       />
@@ -30,9 +30,9 @@ export default function PortfolioPage() {
       <section className="section-space section-texture pt-0">
         <Container className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <SectionIntro
-            description="Cada case combina site publicado, nicho atendido, objetivo do projeto e solução desenvolvida em linguagem direta."
+            description="Cada case reúne site publicado, nicho atendido, objetivo do projeto e solução criada em linguagem direta."
             eyebrow="Cases"
-            title="Uma vitrine de projetos para provar entrega sem depender de promessa abstrata"
+            title="Uma vitrine de projetos reais para gerar confiança logo no primeiro olhar"
           />
           <div className="panel p-6 sm:p-8">
             <div className="grid gap-4">
@@ -51,7 +51,7 @@ export default function PortfolioPage() {
               <div className="panel-soft p-4">
                 <p className="meta-label">Pronto para expansão</p>
                 <p className="mt-2 text-sm text-text/88">
-                  A estrutura do portfólio já está preparada para receber novos cases sem depender de refactor grande.
+                  A estrutura do portfólio já está pronta para receber novos cases com a mesma consistência visual.
                 </p>
               </div>
             </div>

@@ -192,7 +192,7 @@ export function BudgetForm() {
       setSubmissionState({
         status: "error",
         message:
-          "O envio automático falhou por rede, mas seu briefing foi preservado. Continue pelo canal abaixo para não perder o contato.",
+          "Não conseguimos concluir o envio por aqui agora, mas suas informações foram mantidas. Continue pelo canal abaixo para seguir com o atendimento.",
         ...fallbackContact,
       });
     }
@@ -212,7 +212,7 @@ export function BudgetForm() {
         <h3 className="mt-5 text-3xl text-text">
           {submissionState.delivery === "webhook"
             ? "Seu pedido foi enviado com sucesso."
-            : "Seu briefing foi validado e está pronto para continuar."}
+            : "Recebemos suas informações. Você pode seguir pelo canal abaixo."}
         </h3>
         <p className="mt-4 text-base text-text/80">{submissionState.message}</p>
         <div className="panel-soft mt-6 p-4">
@@ -258,10 +258,10 @@ export function BudgetForm() {
         <div className="max-w-2xl">
           <span className="eyebrow">Briefing inicial</span>
           <h3 className="mt-5 text-3xl leading-tight text-text">
-            Conte o suficiente para desenharmos uma proposta mais alinhada.
+            Compartilhe as informações principais para receber uma proposta mais alinhada.
           </h3>
           <p className="mt-4 text-base text-text/80">
-            Você não precisa chegar com tudo definido. A ideia é entender contexto, prioridade e
+            Você não precisa chegar com tudo definido. A ideia é entender cenário, prioridade e
             direção para orientar o próximo passo com clareza.
           </p>
         </div>
@@ -449,8 +449,8 @@ export function BudgetForm() {
 
       <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
         <p className="max-w-xl text-sm text-muted">
-          Ao enviar, sua solicitação pode seguir por webhook, CRM, planilha ou fallback validado
-          para WhatsApp sem perder o contexto do briefing.
+          Ao enviar, suas informações seguem para o canal disponível no momento e, se preciso, a
+          conversa continua pelo WhatsApp sem perder o que foi preenchido.
         </p>
         <Button disabled={submissionState.status === "loading"} type="submit" variant="primary">
           {submissionState.status === "loading" ? "Enviando..." : "Pedir orçamento"}

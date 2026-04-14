@@ -223,7 +223,7 @@ export async function processLeadSubmission(payload: BudgetFormData): Promise<Le
         leadId: envelope.id,
         delivery: "webhook",
         message:
-          "Recebemos seu briefing com sucesso. Se quiser agilizar o contexto, você também pode continuar a conversa pelo contato abaixo.",
+          "Recebemos suas informações com sucesso. Se preferir, você também pode continuar a conversa pelo contato abaixo.",
         ...fallbackContact,
       };
     } catch (error) {
@@ -239,15 +239,14 @@ export async function processLeadSubmission(payload: BudgetFormData): Promise<Le
       leadId: envelope.id,
       delivery: fallbackContact.contactLabel === "Continuar no WhatsApp" ? "whatsapp" : "manual",
       message: webhookUrl
-        ? "Seu briefing foi validado, mas o envio interno falhou agora. Para não perder o contato, continue pelo canal abaixo."
-        : "Seu briefing foi validado. Como o webhook ainda não está configurado, continue pelo canal abaixo para concluir o contato agora.",
+        ? "Recebemos seus dados, mas não conseguimos concluir o envio interno agora. Para seguir sem atraso, continue pelo canal abaixo."
+        : "Recebemos seus dados. Para continuar o atendimento agora, siga pelo canal abaixo.",
       ...fallbackContact,
     };
   }
 
   return {
     ok: false,
-    message:
-      "Não foi possível concluir o envio agora. Configure LEADS_WEBHOOK_URL ou NEXT_PUBLIC_WHATSAPP_NUMBER antes de publicar em produção.",
+    message: "Não foi possível concluir o envio agora. Tente novamente em instantes.",
   };
 }

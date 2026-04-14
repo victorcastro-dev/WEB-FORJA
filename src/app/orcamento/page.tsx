@@ -9,7 +9,7 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata = buildMetadata({
   title: "Pedir orçamento",
   description:
-    "Envie o briefing do seu projeto para receber um orçamento personalizado da WEBFORJA e continuar o contato pelo canal mais seguro para o lançamento.",
+    "Envie as informações do seu projeto para receber um orçamento personalizado da WEBFORJA e seguir o contato pelo canal mais conveniente.",
   path: "/orcamento",
 });
 
@@ -19,20 +19,20 @@ export default function QuotePage() {
       <PageHero
         badge="Captação pronta"
         bullets={[
-          "Briefing rápido com campos estratégicos",
-          "Fallback validado para WhatsApp quando o webhook ainda não estiver ativo",
-          "Rascunho preservado no navegador para evitar perda de contexto",
+          "Briefing rápido com campos essenciais",
+          "Contato pode seguir pelo WhatsApp mesmo antes da integração final",
+          "Rascunho salvo no navegador para evitar perda de informações",
         ]}
-        description="O objetivo desta etapa é entender o suficiente sobre o projeto para organizar uma proposta coerente, sem empurrar você para um pacote genérico."
+        description="Esta etapa ajuda a entender seu projeto com clareza para montar uma proposta coerente, sem empurrar uma solução genérica."
         eyebrow="Orçamento"
-        title="Abra o contexto do seu projeto e receba uma proposta mais alinhada ao que o negócio realmente precisa"
+        title="Abra a conversa com as informações certas para receber uma proposta mais alinhada ao que o negócio precisa"
       />
 
       <section className="section-space section-texture pt-0">
         <Container className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
           <div className="space-y-6">
             <SectionIntro
-              description="A WEBFORJA trabalha com orçamento personalizado. Quanto mais claro for o contexto, melhor fica a proposta e o direcionamento comercial."
+              description="A WEBFORJA trabalha com orçamento personalizado. Quanto mais claro for o cenário, melhor fica a proposta e o direcionamento do projeto."
               eyebrow="Como avaliamos"
               title="O que você precisa saber antes de enviar"
             />

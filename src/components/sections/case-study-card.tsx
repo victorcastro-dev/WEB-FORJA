@@ -38,7 +38,7 @@ export function CaseStudyCard({ caseStudy, compact = false, delay = 0 }: CaseStu
   return (
     <Reveal
       as="article"
-      className="panel interactive-panel group h-full overflow-hidden p-4 sm:p-5"
+      className="panel interactive-panel group flex h-full flex-col overflow-hidden p-4 sm:p-5"
       delay={delay}
       id={caseStudy.id}
       variant="scale"
@@ -73,52 +73,54 @@ export function CaseStudyCard({ caseStudy, compact = false, delay = 0 }: CaseStu
         </div>
       </div>
 
-      <div className="mt-5 flex flex-wrap gap-2">
-        <CaseBadge tone="secondary">{caseStudy.service}</CaseBadge>
-        <CaseBadge tone="signature">{caseStudy.sector}</CaseBadge>
-      </div>
-
-      <h3 className="mt-4 text-[1.75rem] leading-tight text-text">{caseStudy.name}</h3>
-
-      <dl className={cn("mt-5 grid gap-3", !compact && "md:grid-cols-2")}>
-        <div className="panel-soft p-4">
-          <dt className="meta-label">Objetivo do cliente</dt>
-          <dd className="mt-2 text-sm leading-6 text-text/88">{caseStudy.objective}</dd>
+      <div className="mt-5 flex flex-1 flex-col">
+        <div className="flex flex-wrap gap-2">
+          <CaseBadge tone="secondary">{caseStudy.service}</CaseBadge>
+          <CaseBadge tone="signature">{caseStudy.sector}</CaseBadge>
         </div>
-        <div className="panel-soft p-4">
-          <dt className="meta-label">Solução desenvolvida</dt>
-          <dd className="mt-2 text-sm leading-6 text-text/88">{caseStudy.solution}</dd>
+
+        <h3 className="mt-4 text-[1.75rem] leading-tight text-text">{caseStudy.name}</h3>
+
+        <dl className={cn("mt-5 grid gap-3", !compact && "md:grid-cols-2")}>
+          <div className="panel-soft p-4">
+            <dt className="meta-label">Objetivo do cliente</dt>
+            <dd className="mt-2 text-sm leading-6 text-text/88">{caseStudy.objective}</dd>
+          </div>
+          <div className="panel-soft p-4">
+            <dt className="meta-label">Solução desenvolvida</dt>
+            <dd className="mt-2 text-sm leading-6 text-text/88">{caseStudy.solution}</dd>
+          </div>
+        </dl>
+
+        <div className="mt-4 flex flex-wrap gap-2.5">
+          {highlightItems.map((highlight) => (
+            <span
+              className="inline-flex items-center rounded-full border border-border/70 bg-surface-soft/65 px-3 py-2 text-xs font-medium text-text/84"
+              key={highlight}
+            >
+              {highlight}
+            </span>
+          ))}
         </div>
-      </dl>
 
-      <div className="mt-4 flex flex-wrap gap-2.5">
-        {highlightItems.map((highlight) => (
-          <span
-            className="inline-flex items-center rounded-full border border-border/70 bg-surface-soft/65 px-3 py-2 text-xs font-medium text-text/84"
-            key={highlight}
-          >
-            {highlight}
-          </span>
-        ))}
-      </div>
-
-      <div className="mt-6 flex flex-wrap gap-3">
-        {caseStudy.url ? (
-          <>
-            <ButtonLink external href={caseStudy.url} size={compact ? "sm" : "md"} variant="primary">
-              Abrir site
-            </ButtonLink>
-            {compact ? (
-              <ButtonLink href={`/portfolio#${caseStudy.id}`} size="sm" variant="secondary">
-                Ver case
+        <div className="mt-auto flex flex-wrap gap-3 pt-6">
+          {caseStudy.url ? (
+            <>
+              <ButtonLink external href={caseStudy.url} size={compact ? "sm" : "md"} variant="primary">
+                Abrir site
               </ButtonLink>
-            ) : null}
-          </>
-        ) : compact ? (
-          <ButtonLink href={`/portfolio#${caseStudy.id}`} size="sm" variant="secondary">
-            Ver case
-          </ButtonLink>
-        ) : null}
+              {compact ? (
+                <ButtonLink href={`/portfolio#${caseStudy.id}`} size="sm" variant="secondary">
+                  Ver case
+                </ButtonLink>
+              ) : null}
+            </>
+          ) : compact ? (
+            <ButtonLink href={`/portfolio#${caseStudy.id}`} size="sm" variant="secondary">
+              Ver case
+            </ButtonLink>
+          ) : null}
+        </div>
       </div>
     </Reveal>
   );

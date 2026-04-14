@@ -31,6 +31,14 @@ export const metadata: Metadata = {
     "desenvolvimento web",
     "WEBFORJA",
   ],
+  icons: {
+    icon: [
+      { url: "/branding/webforja-logo-mark.svg", type: "image/svg+xml" },
+      { url: "/branding/webforja-logo-mark.png", type: "image/png" },
+    ],
+    shortcut: "/branding/webforja-logo-mark.svg",
+    apple: "/branding/webforja-logo-mark.png",
+  },
 };
 
 export const viewport: Viewport = {

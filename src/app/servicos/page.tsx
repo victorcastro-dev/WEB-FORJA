@@ -32,7 +32,7 @@ export default function ServicesPage() {
       <section className="section-space section-texture pt-0">
         <Container>
           <SectionIntro
-            description="Cada frente responde a um tipo de necessidade, mas todas compartilham a mesma lógica: clareza comercial, boa experiência e base preparada para crescer."
+            description="Cada frente responde a um tipo de necessidade, mas todas seguem a mesma lógica: presença forte, boa experiência e base pronta para crescer."
             eyebrow="Visão geral"
             title="O serviço certo depende do objetivo, do momento e da maturidade do negócio"
           />

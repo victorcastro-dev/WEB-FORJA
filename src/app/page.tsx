@@ -104,7 +104,7 @@ export default function HomePage() {
             <Reveal as="div" className="panel p-6 sm:p-8" delay={90} variant="soft">
               <p className="meta-label">Projetos reais no ar</p>
               <h2 className="mt-4 text-2xl text-text">
-                Três sites publicados que já ajudam a provar a entrega logo no topo da página.
+                Três sites publicados logo no início para mostrar, na prática, o nível do trabalho.
               </h2>
               <div className="mt-5 grid gap-3">
                 {caseStudies.map((caseStudy) => (
@@ -170,9 +170,9 @@ export default function HomePage() {
         <Container>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionIntro
-              description="As frentes principais da WEBFORJA foram pensadas para aumentar clareza comercial, fortalecer a marca e reduzir atrito operacional."
+              description="Os serviços da WEBFORJA foram organizados para fortalecer a marca, facilitar a venda e reduzir ruídos na operação."
               eyebrow="Serviços"
-              title="Quatro frentes para vender melhor, apresentar a empresa com mais força e ganhar eficiência"
+              title="Quatro frentes para vender melhor, fortalecer sua presença e ganhar eficiência"
             />
             <ButtonLink href="/orcamento#formulario-orcamento" variant="secondary">
               Falar sobre meu projeto
@@ -214,9 +214,9 @@ export default function HomePage() {
         <Container>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionIntro
-              description="Cases com projeto publicado, contexto do cliente e solução desenvolvida em linguagem direta, sem mockup vazio e sem texto exagerado."
+              description="Cada case mostra o projeto no ar, o desafio do cliente e a solução criada, de forma direta e sem exagero."
               eyebrow="Portfólio"
-              title="Projetos publicados com contexto suficiente para gerar confiança em poucos segundos"
+              title="Projetos publicados com contexto real para gerar confiança logo nos primeiros segundos"
             />
             <ButtonLink href="/portfolio" variant="secondary">
               Ver portfólio completo
@@ -269,9 +269,9 @@ export default function HomePage() {
         <Container className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div className="space-y-5">
             <SectionIntro
-              description="As dúvidas abaixo ajudam a esclarecer orçamento, personalização, manutenção e formato de projeto antes da proposta."
+              description="Aqui você entende pontos essenciais sobre orçamento, personalização, manutenção e formato de projeto antes de seguir."
               eyebrow="FAQ resumido"
-              title="Perguntas estratégicas antes de seguir para a proposta"
+              title="Dúvidas importantes antes de avançar para a proposta"
             />
             <ButtonLink href="/faq" variant="secondary">
               Ver FAQ completo
@@ -285,9 +285,9 @@ export default function HomePage() {
         <Container className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div className="space-y-6">
             <SectionIntro
-              description="Conte o cenário do seu projeto para receber uma proposta personalizada. Se o webhook ainda não estiver conectado, o formulário continua útil com continuidade no WhatsApp após a validação."
+              description="Compartilhe o cenário do seu projeto para receber uma proposta mais alinhada com a sua necessidade. Mesmo sem integração final, o contato pode seguir normalmente pelo WhatsApp."
               eyebrow="Orçamento"
-              title="Abra a conversa com contexto suficiente para o orçamento nascer mais alinhado"
+              title="Abra a conversa com as informações certas para receber um orçamento mais alinhado"
             />
             <div className="panel p-6 sm:p-8">
               <p className="meta-label">Como tratamos a proposta</p>

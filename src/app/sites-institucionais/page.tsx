@@ -7,7 +7,7 @@ const service = getServiceBySlug("sites-institucionais");
 export const metadata = buildMetadata({
   title: "Sites institucionais com clareza e autoridade",
   description:
-    "Sites institucionais da WEBFORJA com autoridade visual, clareza comercial, SEO de base e estrutura pronta para evoluir.",
+    "Sites institucionais da WEBFORJA com autoridade visual, comunicação clara, SEO de base e estrutura pronta para evoluir.",
   path: "/sites-institucionais",
 });
 

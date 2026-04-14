@@ -121,7 +121,7 @@ export const servicePages: ServicePageContent[] = [
     shortLabel: "Landing Pages",
     title: "Landing pages criadas para transformar clique em contato qualificado.",
     description:
-      "Páginas orientadas a campanha, lançamento ou captação, com promessa clara, CTA forte e leitura rápida no mobile.",
+      "Páginas orientadas a campanha, lançamento ou captação, com mensagem clara, leitura rápida no mobile e foco no próximo passo.",
     highlight: "Mensagem direta, oferta clara e jornada pensada para conversão.",
     hero: {
       eyebrow: "Landing Pages",
@@ -130,7 +130,7 @@ export const servicePages: ServicePageContent[] = [
         "Desenhamos landing pages para anúncios, lançamentos e captação de leads com estrutura enxuta, copy clara e foco no próximo passo.",
       bullets: [
         "Promessa clara sem excesso de texto",
-        "CTA forte para lead, venda ou WhatsApp",
+        "Chamada clara para lead, venda ou WhatsApp",
         "Estrutura pronta para tráfego e testes",
       ],
     },
@@ -156,7 +156,7 @@ export const servicePages: ServicePageContent[] = [
     examples: [
       "Página de captação para tráfego pago.",
       "Landing para lançamento de serviço ou produto.",
-      "Página única para validar uma oferta com CTA direto.",
+      "Página única para validar uma oferta com chamada mais direta para contato.",
     ],
     faq: [
       {
@@ -167,7 +167,7 @@ export const servicePages: ServicePageContent[] = [
       {
         question: "Vocês criam a estrutura de conversão da página?",
         answer:
-          "Sim. O trabalho inclui organizar conteúdo, hierarquia, CTA e blocos estratégicos para facilitar a tomada de decisão.",
+          "Sim. O trabalho inclui organizar conteúdo, hierarquia, chamadas e blocos estratégicos para facilitar a tomada de decisão.",
       },
       {
         question: "É possível evoluir a landing page depois?",
@@ -180,7 +180,7 @@ export const servicePages: ServicePageContent[] = [
     slug: "sites-institucionais",
     label: "Sites Institucionais",
     shortLabel: "Sites Institucionais",
-    title: "Sites institucionais com autoridade visual, clareza comercial e base escalável.",
+    title: "Sites institucionais com autoridade visual, comunicação clara e base escalável.",
     description:
       "Projetos para empresas que precisam se apresentar melhor, transmitir confiança e transformar presença digital em ativo comercial.",
     highlight: "Posicionamento claro sem parecer site genérico.",
@@ -305,7 +305,7 @@ export const servicePages: ServicePageContent[] = [
     title: "Automações para ganhar tempo, reduzir falhas e dar previsibilidade ao fluxo.",
     description:
       "Automatizamos etapas repetitivas e conexões entre ferramentas para liberar o time do trabalho manual e dar mais consistência à operação.",
-    highlight: "Automação com lógica de negócio, não só conexão por conectar.",
+    highlight: "Fluxos pensados para a rotina real do negócio.",
     hero: {
       eyebrow: "Automações",
       title: "Automatizar bem é desenhar um fluxo confiável para o negócio funcionar melhor.",
@@ -319,7 +319,7 @@ export const servicePages: ServicePageContent[] = [
     },
     overview: [
       "Automação não é só economia de tempo. Ela também melhora consistência, reduz falhas humanas e libera atenção do time para atividades mais importantes.",
-      "Nosso trabalho parte do processo real, identifica gargalos e conecta as peças com pragmatismo.",
+      "Nosso trabalho parte do processo real, identifica gargalos e conecta as ferramentas com praticidade.",
     ],
     forWho: [
       "Negócios que repetem tarefas em atendimento, vendas ou operação.",
@@ -337,9 +337,9 @@ export const servicePages: ServicePageContent[] = [
       "Estrutura pronta para crescer com novas integrações ou regras.",
     ],
     examples: [
-      "Formulário que envia lead para webhook, CRM ou planilha.",
+      "Formulário que direciona o contato para CRM, planilha ou atendimento.",
       "Notificações automáticas para equipe comercial ou atendimento.",
-      "Rotinas conectando site, sistema interno e ferramentas externas.",
+      "Rotinas que conectam site, sistema interno e ferramentas externas.",
     ],
     faq: [
       {
@@ -367,12 +367,14 @@ export const homeProofPoints = [
     description: "Atlas Cálculos, Castro & Alves Advogados e Erick Davi Barbearia estão no ar.",
   },
   {
-    title: "Portfólio com links oficiais",
-    description: "Cada case leva para o projeto publicado, sem mockup vazio nem caso em preparação.",
+    title: "Portfólio com sites no ar",
+    description:
+      "Cada case leva para um projeto real, publicado e acessível, sem exemplo genérico nem material provisório.",
   },
   {
-    title: "Captação pronta para hoje",
-    description: "O orçamento continua útil mesmo sem webhook, com fallback validado para WhatsApp.",
+    title: "Estrutura pronta para receber contatos",
+    description:
+      "Mesmo antes da automação completa, o orçamento segue ativo e a conversa pode continuar pelo WhatsApp.",
   },
 ];
 
@@ -391,7 +393,7 @@ export const homeDifferentials = [
   {
     title: "Design com função comercial",
     description:
-      "A estética reforça confiança e valor percebido sem atrapalhar leitura, CTA ou navegação.",
+      "A estética reforça confiança e valor percebido sem atrapalhar leitura, navegação ou pedido de contato.",
   },
   {
     title: "Código pronto para crescer",
@@ -414,11 +416,11 @@ export const caseStudies = [
     objective:
       "Apresentar a Atlas como suporte técnico em cálculos trabalhistas para advogados e escritórios, com comunicação clara e contato rápido.",
     solution:
-      "Estrutura institucional com páginas por etapa do processo, narrativa técnica mais organizada e CTA direto para solicitar análise.",
+      "Estrutura institucional com páginas organizadas por etapas, linguagem clara e chamada mais direta para solicitar uma análise.",
     highlights: [
-      "Frentes organizadas por etapa processual",
-      "Comunicação técnica com leitura clara",
-      "WhatsApp de análise em evidência",
+      "Informações organizadas por etapas",
+      "Linguagem clara e fácil de entender",
+      "Solicitação de análise pelo WhatsApp",
     ],
     imageSrc: "/portfolio/atlas-calculos-hero.png",
     imageAlt: "Screenshot do site Atlas Cálculos",
@@ -629,7 +631,7 @@ export const budgetExpectations = [
   "O orçamento é personalizado conforme objetivo, escopo e complexidade do projeto.",
   "Não publicamos preço fechado de criação porque cada solução tem prioridades e exigências diferentes.",
   "O pagamento de sinal é tratado na proposta, e parcelamento pode ser avaliado com as condições informadas ao cliente.",
-  "Se o webhook ainda não estiver conectado no lançamento, o envio continua com fallback para WhatsApp após a validação.",
+  "Mesmo sem a integração final no lançamento, o contato pode continuar normalmente pelo WhatsApp.",
 ];
 
 export function getServiceBySlug(slug: ServicePageContent["slug"]) {
