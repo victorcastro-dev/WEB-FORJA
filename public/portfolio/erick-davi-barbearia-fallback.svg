@@ -1,0 +1,109 @@
+<svg width="1200" height="825" viewBox="0 0 1200 825" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="825" rx="40" fill="#090A0C"/>
+  <rect width="1200" height="825" rx="40" fill="url(#paint0_radial)"/>
+  <rect x="34" y="34" width="1132" height="757" rx="28" fill="#0F1115" stroke="rgba(255,255,255,0.08)"/>
+  <rect x="34" y="34" width="1132" height="68" rx="28" fill="#12151B"/>
+  <rect x="34" y="74" width="1132" height="1" fill="rgba(255,255,255,0.06)"/>
+  <circle cx="73" cy="68" r="7" fill="#6A5241"/>
+  <circle cx="98" cy="68" r="7" fill="#8A6A4A"/>
+  <circle cx="123" cy="68" r="7" fill="#A68051"/>
+  <rect x="171" y="51" width="335" height="34" rx="17" fill="#0B0D10" stroke="rgba(255,255,255,0.06)"/>
+  <text x="193" y="73" fill="#CDB79A" font-family="Arial, sans-serif" font-size="15" font-weight="700">
+    www.erickdavibarbearia.com.br
+  </text>
+  <text x="88" y="181" fill="#D7B58A" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="0.24em">
+    BARBEARIA PREMIUM EM ITAQUERA
+  </text>
+  <text x="88" y="262" fill="#F3E9D8" font-family="Georgia, 'Times New Roman', serif" font-size="60" font-weight="700">
+    Presença profissional
+  </text>
+  <text x="88" y="332" fill="#C89A63" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-style="italic">
+    com agendamento online
+  </text>
+  <text x="88" y="402" fill="#F3E9D8" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="700">
+    e sinal de reserva.
+  </text>
+  <text x="88" y="458" fill="#D0C5B3" font-family="Arial, sans-serif" font-size="24">
+    Fluxo pensado para mostrar serviços, valores, sinal de R$ 15,00
+  </text>
+  <text x="88" y="494" fill="#D0C5B3" font-family="Arial, sans-serif" font-size="24">
+    e experiência profissional do agendamento ao atendimento.
+  </text>
+  <rect x="88" y="548" width="236" height="58" rx="29" fill="#C08A48"/>
+  <text x="128" y="585" fill="#0D0B09" font-family="Arial, sans-serif" font-size="20" font-weight="700">
+    Agendar com sinal
+  </text>
+  <rect x="344" y="548" width="194" height="58" rx="29" fill="transparent" stroke="rgba(255,255,255,0.18)"/>
+  <text x="390" y="585" fill="#EEE3D2" font-family="Arial, sans-serif" font-size="20" font-weight="700">
+    Ver serviços
+  </text>
+
+  <rect x="735" y="148" width="343" height="478" rx="30" fill="url(#paint1_linear)" stroke="rgba(255,255,255,0.08)"/>
+  <rect x="768" y="184" width="277" height="102" rx="24" fill="#11151A" stroke="rgba(255,255,255,0.08)"/>
+  <text x="796" y="219" fill="#D8B68E" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="0.2em">
+    RESERVA ANTECIPADA
+  </text>
+  <text x="796" y="259" fill="#F8EFE3" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="700">
+    R$ 15,00
+  </text>
+  <text x="796" y="322" fill="#A9A39B" font-family="Arial, sans-serif" font-size="18">
+    Agendamento online com validação elegante
+  </text>
+
+  <rect x="768" y="327" width="277" height="113" rx="24" fill="#11151A" stroke="rgba(255,255,255,0.08)"/>
+  <text x="796" y="362" fill="#F3E9D8" font-family="Arial, sans-serif" font-size="24" font-weight="700">
+    Corte Masculino
+  </text>
+  <text x="796" y="397" fill="#A9A39B" font-family="Arial, sans-serif" font-size="18">
+    30 min • valor total R$ 40,00
+  </text>
+  <text x="796" y="429" fill="#D7B58A" font-family="Arial, sans-serif" font-size="18" font-weight="700">
+    Sinal de R$ 15,00 e restante no local
+  </text>
+
+  <rect x="768" y="462" width="277" height="113" rx="24" fill="#11151A" stroke="rgba(255,255,255,0.08)"/>
+  <text x="796" y="497" fill="#F3E9D8" font-family="Arial, sans-serif" font-size="24" font-weight="700">
+    Corte e Barba
+  </text>
+  <text x="796" y="532" fill="#A9A39B" font-family="Arial, sans-serif" font-size="18">
+    1h • valor total R$ 60,00
+  </text>
+  <text x="796" y="564" fill="#D7B58A" font-family="Arial, sans-serif" font-size="18" font-weight="700">
+    Reserva com sinal e atendimento presencial
+  </text>
+
+  <rect x="88" y="670" width="260" height="76" rx="22" fill="#11151A" stroke="rgba(255,255,255,0.08)"/>
+  <text x="116" y="706" fill="#F3E9D8" font-family="Arial, sans-serif" font-size="22" font-weight="700">
+    Agendamento online
+  </text>
+  <text x="116" y="733" fill="#A9A39B" font-family="Arial, sans-serif" font-size="16">
+    Reserva com sinal e confirmação clara
+  </text>
+
+  <rect x="372" y="670" width="260" height="76" rx="22" fill="#11151A" stroke="rgba(255,255,255,0.08)"/>
+  <text x="400" y="706" fill="#F3E9D8" font-family="Arial, sans-serif" font-size="22" font-weight="700">
+    Serviços e valores
+  </text>
+  <text x="400" y="733" fill="#A9A39B" font-family="Arial, sans-serif" font-size="16">
+    Preço total, sinal e restante no local
+  </text>
+
+  <rect x="656" y="670" width="260" height="76" rx="22" fill="#11151A" stroke="rgba(255,255,255,0.08)"/>
+  <text x="684" y="706" fill="#F3E9D8" font-family="Arial, sans-serif" font-size="22" font-weight="700">
+    Atendimento profissional
+  </text>
+  <text x="684" y="733" fill="#A9A39B" font-family="Arial, sans-serif" font-size="16">
+    Experiência mais clara e mais confiável
+  </text>
+
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1052 128) rotate(130.248) scale(747.258 804.521)">
+      <stop stop-color="#392B22"/>
+      <stop offset="1" stop-color="#090A0C" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="paint1_linear" x1="735" y1="148" x2="1078" y2="626" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#171A20"/>
+      <stop offset="1" stop-color="#0E1014"/>
+    </linearGradient>
+  </defs>
+</svg>

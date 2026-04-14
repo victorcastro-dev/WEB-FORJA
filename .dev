@@ -1,0 +1,11 @@
+$ErrorActionPreference = "Stop"
+
+$projectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
+Set-Location $projectRoot
+
+Write-Host ""
+Write-Host "Iniciando WEBFORJA em modo desenvolvimento..." -ForegroundColor Cyan
+Write-Host "Acesse: http://localhost:3000" -ForegroundColor DarkGray
+Write-Host ""
+
+& "C:\Program Files\nodejs\npm.cmd" run dev
