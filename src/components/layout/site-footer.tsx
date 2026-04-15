@@ -13,13 +13,13 @@ export function SiteFooter() {
   return (
     <footer className="mt-8 border-t border-border/40 bg-surface-soft/45">
       <Container className="py-14">
-        <div className="panel-strong overflow-hidden p-7 sm:p-9 lg:p-10">
-          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+        <div className="panel-strong overflow-hidden p-6 sm:p-9 lg:p-10">
+          <div className="grid gap-7 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
             <div className="max-w-2xl">
               <Link aria-label="WEBFORJA, voltar para a página inicial" href="/">
                 <BrandLockup size="lg" />
               </Link>
-              <h2 className="mt-5 text-3xl leading-tight text-text sm:text-4xl">
+              <h2 className="mt-5 text-[2.2rem] leading-[1.08] text-text sm:text-4xl">
                 Sites, landing pages, sistemas e automações para vender melhor e operar com mais clareza.
               </h2>
               <p className="mt-4 lead-copy max-w-xl">
@@ -27,11 +27,11 @@ export function SiteFooter() {
                 transmitir confiança e facilitar o próximo passo comercial.
               </p>
             </div>
-            <div className="flex flex-wrap gap-3 lg:justify-end">
-              <ButtonLink href="/orcamento" variant="primary">
+            <div className="cta-cluster lg:justify-end">
+              <ButtonLink className="sm:min-w-[11rem]" href="/orcamento" variant="primary">
                 Pedir orçamento
               </ButtonLink>
-              <ButtonLink href="/portfolio" variant="secondary">
+              <ButtonLink className="sm:min-w-[10rem]" href="/portfolio" variant="secondary">
                 Ver projetos
               </ButtonLink>
             </div>
@@ -39,7 +39,7 @@ export function SiteFooter() {
 
           <div className="accent-line my-8" />
 
-          <div className="grid gap-12 lg:grid-cols-[1.2fr_repeat(2,0.8fr)]">
+          <div className="grid gap-10 lg:grid-cols-[1.2fr_repeat(2,0.8fr)]">
             <div className="max-w-md">
               <p className="meta-label">Contato</p>
               <div className="mt-4 flex flex-col gap-2 text-sm text-muted">

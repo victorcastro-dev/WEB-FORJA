@@ -24,7 +24,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
 
       <section className="section-space section-texture pt-0">
         <Container className="grid gap-6 lg:grid-cols-[1fr_0.85fr]">
-          <Reveal as="div" className="panel p-6 sm:p-8" variant="scale">
+          <Reveal as="div" className="panel p-5 sm:p-8" variant="scale">
             <SectionIntro
               description={service.description}
               eyebrow={`Sobre ${service.label}`}
@@ -39,7 +39,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
             </div>
           </Reveal>
 
-          <Reveal as="div" className="panel p-6 sm:p-8" delay={120} variant="soft">
+          <Reveal as="div" className="panel p-5 sm:p-8" delay={120} variant="soft">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-muted">
               Para quem serve
             </p>
@@ -53,7 +53,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
                   variant="soft"
                 >
                   <span className="mt-1 h-2.5 w-2.5 rounded-full bg-secondary" />
-                  <span>{item}</span>
+                  <span className="min-w-0 leading-6">{item}</span>
                 </Reveal>
               ))}
             </ul>
@@ -65,7 +65,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
         <Container>
           <Reveal
             as="div"
-            className="panel flex flex-col gap-4 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between"
+            className="panel flex flex-col gap-4 p-5 sm:p-8 lg:flex-row lg:items-center lg:justify-between"
             variant="scale"
           >
             <div className="max-w-2xl">
@@ -75,11 +75,11 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
                 definir escopo e prioridade com mais clareza.
               </p>
             </div>
-            <div className="flex flex-wrap gap-3">
-              <ButtonLink href="/orcamento#formulario-orcamento" variant="primary">
+            <div className="cta-cluster cta-cluster-tight">
+              <ButtonLink className="sm:min-w-[11rem]" href="/orcamento#formulario-orcamento" variant="primary">
                 Pedir orçamento
               </ButtonLink>
-              <ButtonLink href="/portfolio" variant="secondary">
+              <ButtonLink className="sm:min-w-[10rem]" href="/portfolio" variant="secondary">
                 Ver projetos
               </ButtonLink>
             </div>

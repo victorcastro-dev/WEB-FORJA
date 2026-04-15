@@ -27,7 +27,7 @@ export function buttonClasses({
   className,
 }: Omit<SharedProps, "children">) {
   return cn(
-    "control-shell inline-flex items-center justify-center gap-2 rounded-full border font-semibold tracking-[0.01em] transition-all duration-300",
+    "control-shell inline-flex min-w-0 max-w-full items-center justify-center gap-2 whitespace-nowrap rounded-full border text-center font-semibold leading-none tracking-[0.01em] transition-all duration-300",
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas",
     "disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none disabled:translate-y-0",
     variant === "primary" &&
@@ -36,9 +36,9 @@ export function buttonClasses({
       "border-border/80 bg-surface/90 text-text shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] hover:-translate-y-0.5 hover:border-signature/35 hover:bg-signature/10 hover:text-text hover:shadow-[0_18px_34px_rgba(6,12,22,0.14)] active:translate-y-0",
     variant === "ghost" &&
       "border-transparent bg-transparent text-text hover:border-border/70 hover:bg-surface-soft/80 active:translate-y-0",
-    size === "sm" && "px-4 py-2 text-sm",
-    size === "md" && "px-5 py-3 text-sm sm:px-6",
-    size === "lg" && "px-6 py-3.5 text-sm sm:px-7",
+    size === "sm" && "min-h-[2.75rem] px-4 py-2 text-sm",
+    size === "md" && "min-h-12 px-5 py-3 text-sm sm:px-6",
+    size === "lg" && "min-h-[3.25rem] px-6 py-3.5 text-sm sm:px-7",
     className,
   );
 }

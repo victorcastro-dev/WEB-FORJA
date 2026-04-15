@@ -28,8 +28,8 @@ export function PageHero({
 }: PageHeroProps) {
   return (
     <section className="section-space section-texture section-texture-hero">
-      <Container className="grid gap-8 lg:grid-cols-[1.16fr_0.84fr] lg:items-stretch">
-        <Reveal as="div" className="panel-strong hero-card-glow relative overflow-hidden p-8 sm:p-10 lg:p-12" variant="scale">
+      <Container className="grid gap-7 lg:grid-cols-[1.16fr_0.84fr] lg:items-stretch">
+        <Reveal as="div" className="panel-strong hero-card-glow relative overflow-hidden p-7 sm:p-10 lg:p-12" variant="scale">
           <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-primary/0 via-primary/50 to-signature/0" />
           <ParallaxLayer
             className="right-[-5rem] top-[-4.5rem] h-40 w-40 rounded-full blur-3xl"
@@ -52,20 +52,20 @@ export function PageHero({
           </ParallaxLayer>
           <div className="relative z-10">
             <span className="eyebrow">{eyebrow}</span>
-            <h1 className="mt-6 max-w-4xl text-4xl leading-tight sm:text-5xl lg:text-6xl">{title}</h1>
+            <h1 className="mt-6 max-w-4xl text-[2.35rem] leading-[1.08] sm:text-5xl lg:text-6xl">{title}</h1>
             <p className="lead-copy mt-5 max-w-2xl">{description}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href={primaryHref} variant="primary">
+            <div className="cta-cluster mt-8">
+              <ButtonLink className="sm:min-w-[11rem]" href={primaryHref} variant="primary">
                 {primaryLabel}
               </ButtonLink>
-              <ButtonLink href={secondaryHref} variant="secondary">
+              <ButtonLink className="sm:min-w-[10rem]" href={secondaryHref} variant="secondary">
                 {secondaryLabel}
               </ButtonLink>
             </div>
           </div>
         </Reveal>
 
-        <Reveal as="div" className="panel h-full p-6 sm:p-8" delay={120} variant="soft">
+        <Reveal as="div" className="panel h-full p-5 sm:p-8" delay={120} variant="soft">
           <ParallaxLayer
             className="right-[-4rem] top-[-2.25rem] h-28 w-28 rounded-full blur-3xl"
             rotate={1.5}
@@ -75,7 +75,7 @@ export function PageHero({
             <div className="h-full w-full rounded-full bg-[radial-gradient(circle_at_center,rgb(var(--color-secondary)_/_0.16),transparent_72%)]" />
           </ParallaxLayer>
           <div className="relative z-10">
-            <div className="flex items-center justify-between gap-4">
+            <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
               <p className="meta-label">Direção do projeto</p>
               <span className="signature-chip">{badge}</span>
             </div>
@@ -91,7 +91,7 @@ export function PageHero({
                   <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-signature/25 bg-signature/10 text-sm font-semibold text-signature">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <p className="text-sm text-text/90">{bullet}</p>
+                  <p className="min-w-0 text-sm leading-6 text-text/90">{bullet}</p>
                 </Reveal>
               ))}
             </div>

@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 import { TrackedWhatsAppAnchor } from "@/components/analytics/tracked-whatsapp-anchor";
 import { buildGenericWhatsAppUrl } from "@/lib/contact";
 
@@ -23,14 +27,33 @@ function FormIcon() {
   );
 }
 
+const mobileFloatClasses =
+  "control-shell group fixed bottom-[max(0.75rem,env(safe-area-inset-bottom))] right-[max(0.75rem,env(safe-area-inset-right))] z-40 inline-flex h-12 w-12 items-center justify-center rounded-full border border-border/70 bg-surface/92 p-0 text-sm font-semibold text-text shadow-[0_18px_45px_rgba(6,18,14,0.18)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 sm:h-auto sm:w-auto sm:gap-2.5 sm:py-2.5 sm:pl-3 sm:pr-4";
+
 export function WhatsAppFloat() {
+  const [isVisible, setIsVisible] = useState(false);
   const whatsappUrl = buildGenericWhatsAppUrl("Olá! Quero falar sobre um projeto para a WEBFORJA.");
+
+  useEffect(() => {
+    function syncVisibility() {
+      setIsVisible(window.scrollY > 180);
+    }
+
+    syncVisibility();
+    window.addEventListener("scroll", syncVisibility, { passive: true });
+
+    return () => window.removeEventListener("scroll", syncVisibility);
+  }, []);
+
+  if (!isVisible) {
+    return null;
+  }
 
   if (!whatsappUrl) {
     return (
       <a
         aria-label="Abrir formulário de orçamento"
-        className="control-shell group fixed bottom-5 right-5 z-40 inline-flex items-center gap-2.5 rounded-full border border-border/70 bg-surface/92 py-2.5 pl-3 pr-4 text-sm font-semibold text-text shadow-[0_18px_45px_rgba(6,18,14,0.18)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-[0_24px_54px_rgba(6,18,14,0.22)]"
+        className={`${mobileFloatClasses} hover:border-primary/35 hover:shadow-[0_24px_54px_rgba(6,18,14,0.22)]`}
         href="/orcamento#formulario-orcamento"
       >
         <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.22)] transition-transform duration-300 group-hover:scale-105">
@@ -44,7 +67,7 @@ export function WhatsAppFloat() {
   return (
     <TrackedWhatsAppAnchor
       aria-label="Falar no WhatsApp"
-      className="control-shell group fixed bottom-5 right-5 z-40 inline-flex items-center gap-2.5 rounded-full border border-border/70 bg-surface/92 py-2.5 pl-3 pr-4 text-sm font-semibold text-text shadow-[0_18px_45px_rgba(6,18,14,0.18)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-emerald-300/35 hover:shadow-[0_24px_54px_rgba(6,18,14,0.22)]"
+      className={`${mobileFloatClasses} hover:border-emerald-300/35 hover:shadow-[0_24px_54px_rgba(6,18,14,0.22)]`}
       href={whatsappUrl}
       placement="floating_whatsapp"
       rel="noreferrer"

@@ -16,18 +16,18 @@ export function FaqList({ items }: FaqListProps) {
           key={item.question}
           variant="soft"
         >
-          <summary className="control-shell flex cursor-pointer items-center justify-between gap-4 px-5 py-5 transition hover:bg-surface-soft/40 sm:px-6">
-            <div className="flex items-start gap-4">
+          <summary className="control-shell flex cursor-pointer items-center justify-between gap-4 px-4 py-5 transition hover:bg-surface-soft/40 sm:px-6">
+            <div className="flex min-w-0 items-start gap-4">
               <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border/70 bg-surface-soft/80 text-sm font-semibold text-signature">
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <span className="text-left text-base font-semibold text-text">{item.question}</span>
+              <span className="min-w-0 text-left text-base font-semibold leading-6 text-text">{item.question}</span>
             </div>
             <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border/70 bg-surface-soft/80 text-sm font-semibold text-primary transition group-open:rotate-45 group-open:border-primary/30">
               +
             </span>
           </summary>
-          <div className="border-t border-border/60 px-5 pb-5 pt-4 sm:px-6">
+          <div className="border-t border-border/60 px-4 pb-5 pt-4 sm:px-6">
             <p className="text-sm sm:text-base">{item.answer}</p>
           </div>
         </Reveal>

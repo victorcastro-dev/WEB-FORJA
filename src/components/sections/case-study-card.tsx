@@ -84,11 +84,11 @@ export function CaseStudyCard({ caseStudy, compact = false, delay = 0 }: CaseStu
         <dl className={cn("mt-5 grid gap-3", !compact && "md:grid-cols-2")}>
           <div className="panel-soft p-4">
             <dt className="meta-label">Objetivo do cliente</dt>
-            <dd className="mt-2 text-sm leading-6 text-text/88">{caseStudy.objective}</dd>
+            <dd className="mt-2 min-w-0 text-sm leading-6 text-text/88">{caseStudy.objective}</dd>
           </div>
           <div className="panel-soft p-4">
             <dt className="meta-label">Solução desenvolvida</dt>
-            <dd className="mt-2 text-sm leading-6 text-text/88">{caseStudy.solution}</dd>
+            <dd className="mt-2 min-w-0 text-sm leading-6 text-text/88">{caseStudy.solution}</dd>
           </div>
         </dl>
 
@@ -103,20 +103,31 @@ export function CaseStudyCard({ caseStudy, compact = false, delay = 0 }: CaseStu
           ))}
         </div>
 
-        <div className="mt-auto flex flex-wrap gap-3 pt-6">
+        <div className="cta-cluster cta-cluster-tight mt-auto pt-6">
           {caseStudy.url ? (
             <>
-              <ButtonLink external href={caseStudy.url} size={compact ? "sm" : "md"} variant="primary">
+              <ButtonLink
+                className={compact ? "sm:min-w-[8.5rem]" : "sm:min-w-[9.5rem]"}
+                external
+                href={caseStudy.url}
+                size={compact ? "sm" : "md"}
+                variant="primary"
+              >
                 Abrir site
               </ButtonLink>
               {compact ? (
-                <ButtonLink href={`/portfolio#${caseStudy.id}`} size="sm" variant="secondary">
+                <ButtonLink
+                  className="sm:min-w-[8.5rem]"
+                  href={`/portfolio#${caseStudy.id}`}
+                  size="sm"
+                  variant="secondary"
+                >
                   Ver case
                 </ButtonLink>
               ) : null}
             </>
           ) : compact ? (
-            <ButtonLink href={`/portfolio#${caseStudy.id}`} size="sm" variant="secondary">
+            <ButtonLink className="sm:min-w-[8.5rem]" href={`/portfolio#${caseStudy.id}`} size="sm" variant="secondary">
               Ver case
             </ButtonLink>
           ) : null}

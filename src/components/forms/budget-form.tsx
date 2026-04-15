@@ -200,8 +200,8 @@ export function BudgetForm() {
 
   if (submissionState.status === "success") {
     return (
-      <div aria-live="polite" className="panel-strong p-6 sm:p-8">
-        <div className="flex flex-wrap items-center justify-between gap-3">
+      <div aria-live="polite" className="panel-strong p-5 sm:p-8">
+        <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
           <span className="eyebrow">
             {submissionState.delivery === "webhook" ? "Pedido recebido" : "Próximo passo"}
           </span>
@@ -219,10 +219,10 @@ export function BudgetForm() {
           <p className="meta-label">Protocolo</p>
           <p className="mt-2 text-base text-text">{submissionState.leadId}</p>
         </div>
-        <div className="mt-7 flex flex-wrap gap-3">
+        <div className="cta-cluster mt-7">
           {submissionState.contactUrl ? (
             <a
-              className={buttonClasses({ variant: "primary" })}
+              className={buttonClasses({ className: "sm:min-w-[11rem]", variant: "primary" })}
               href={submissionState.contactUrl}
               onClick={() => {
                 if (isWhatsAppUrl(submissionState.contactUrl)) {
@@ -243,6 +243,7 @@ export function BudgetForm() {
               setSubmissionState({ status: "idle" });
               setErrors({});
             }}
+            className="sm:min-w-[11rem]"
             variant="secondary"
           >
             Enviar outro pedido
@@ -253,11 +254,11 @@ export function BudgetForm() {
   }
 
   return (
-    <form aria-live="polite" className="panel-strong p-6 sm:p-8 lg:p-9" noValidate onSubmit={handleSubmit}>
-      <div className="flex flex-wrap items-start justify-between gap-4">
+    <form aria-live="polite" className="panel-strong p-5 sm:p-8 lg:p-9" noValidate onSubmit={handleSubmit}>
+      <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="max-w-2xl">
           <span className="eyebrow">Briefing inicial</span>
-          <h3 className="mt-5 text-3xl leading-tight text-text">
+          <h3 className="mt-5 text-[2.2rem] leading-[1.08] text-text">
             Compartilhe as informações principais para receber uma proposta mais alinhada.
           </h3>
           <p className="mt-4 text-base text-text/80">
@@ -285,7 +286,7 @@ export function BudgetForm() {
 
       <div className="space-y-8">
         <section>
-          <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
             <p className="meta-label">Contato</p>
             <p className="text-sm text-muted">Campos essenciais para retorno e contexto.</p>
           </div>
@@ -427,7 +428,11 @@ export function BudgetForm() {
           {submissionState.contactUrl ? (
             <div className="mt-4">
               <a
-                className={buttonClasses({ variant: "secondary", size: "sm" })}
+                className={buttonClasses({
+                  className: "w-full sm:w-auto sm:min-w-[12rem]",
+                  variant: "secondary",
+                  size: "sm",
+                })}
                 href={submissionState.contactUrl}
                 onClick={() => {
                   if (isWhatsAppUrl(submissionState.contactUrl)) {
@@ -447,12 +452,12 @@ export function BudgetForm() {
         </div>
       ) : null}
 
-      <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
+      <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="max-w-xl text-sm text-muted">
           Ao enviar, suas informações seguem para o canal disponível no momento e, se preciso, a
           conversa continua pelo WhatsApp sem perder o que foi preenchido.
         </p>
-        <Button disabled={submissionState.status === "loading"} type="submit" variant="primary">
+        <Button className="w-full sm:min-w-[11rem] sm:w-auto" disabled={submissionState.status === "loading"} type="submit" variant="primary">
           {submissionState.status === "loading" ? "Enviando..." : "Pedir orçamento"}
         </Button>
       </div>
@@ -486,9 +491,9 @@ function ChoiceCard({ title, description, isSelected, name, value, onChange }: C
         value={value}
       />
       <div className="flex items-start justify-between gap-4 rounded-[18px] peer-focus-visible:ring-2 peer-focus-visible:ring-primary/60 peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-canvas">
-        <div>
+        <div className="min-w-0">
           <p className="text-base font-semibold text-text">{title}</p>
-          <p className="mt-2 text-sm text-text/80">{description}</p>
+          <p className="mt-2 text-sm leading-6 text-text/80">{description}</p>
         </div>
         <span
           className={cn(
@@ -527,7 +532,7 @@ function ChoiceChip({ label, name, value, checked, onChange }: ChoiceChipProps) 
         type="radio"
         value={value}
       />
-      <span className="rounded-full peer-focus-visible:ring-2 peer-focus-visible:ring-primary/60 peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-canvas">
+      <span className="whitespace-nowrap rounded-full peer-focus-visible:ring-2 peer-focus-visible:ring-primary/60 peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-canvas">
         {label}
       </span>
     </label>

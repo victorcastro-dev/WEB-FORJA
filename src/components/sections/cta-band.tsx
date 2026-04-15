@@ -21,7 +21,7 @@ export function CtaBand({
   return (
     <section className="section-space section-texture section-texture-band pt-0">
       <Container>
-        <Reveal as="div" className="panel-strong overflow-hidden p-8 sm:p-10 lg:p-12" variant="scale">
+        <Reveal as="div" className="panel-strong overflow-hidden p-7 sm:p-10 lg:p-12" variant="scale">
           <ParallaxLayer
             className="left-[-5rem] top-[-3rem] h-44 w-44 rounded-full blur-3xl"
             rotate={-2.2}
@@ -45,14 +45,14 @@ export function CtaBand({
             <span className="eyebrow">{eyebrow}</span>
             <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
               <div className="max-w-3xl">
-                <h2 className="text-3xl leading-tight sm:text-4xl lg:text-5xl">{title}</h2>
+                <h2 className="text-[2.2rem] leading-[1.08] sm:text-4xl lg:text-5xl">{title}</h2>
                 <p className="lead-copy mt-4 max-w-2xl">{description}</p>
               </div>
-              <div className="flex flex-wrap gap-3">
-                <ButtonLink href="/orcamento" variant="primary">
+              <div className="cta-cluster cta-cluster-tight">
+                <ButtonLink className="sm:min-w-[11rem]" href="/orcamento" variant="primary">
                   Pedir orçamento
                 </ButtonLink>
-                <ButtonLink href={secondaryHref} variant="secondary">
+                <ButtonLink className="sm:min-w-[12rem]" href={secondaryHref} variant="secondary">
                   {secondaryLabel}
                 </ButtonLink>
               </div>

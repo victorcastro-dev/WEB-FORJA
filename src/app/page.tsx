@@ -38,8 +38,8 @@ export default function HomePage() {
   return (
     <>
       <section className="section-space section-texture section-texture-hero">
-        <Container className="grid gap-6 xl:grid-cols-[1.14fr_0.86fr]">
-          <Reveal as="div" className="panel-strong hero-card-glow relative overflow-hidden p-8 sm:p-10 lg:p-12" variant="scale">
+        <Container className="grid gap-7 xl:grid-cols-[1.14fr_0.86fr]">
+          <Reveal as="div" className="panel-strong hero-card-glow relative overflow-hidden p-7 sm:p-10 lg:p-12" variant="scale">
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-primary/0 via-primary/60 to-signature/0" />
             <ParallaxLayer
               className="right-[-5rem] top-[-4rem] h-44 w-44 rounded-full blur-3xl"
@@ -65,17 +65,18 @@ export default function HomePage() {
                 <span className="eyebrow">Sites, landing pages, sistemas e automações</span>
                 <span className="signature-chip">Projetos publicados</span>
               </div>
-              <h1 className="mt-6 max-w-4xl text-4xl leading-tight sm:text-5xl lg:text-6xl">
+              <h1 className="mt-6 max-w-4xl text-[2.35rem] leading-[1.08] sm:text-5xl lg:text-6xl">
                 {siteConfig.heroHeadline}
               </h1>
               <p className="lead-copy mt-5 max-w-2xl">{siteConfig.heroSubheadline}</p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
-                <ButtonLink href="/orcamento#formulario-orcamento" variant="primary">
+              <div className="cta-cluster mt-8">
+                <ButtonLink className="sm:min-w-[11rem]" href="/orcamento#formulario-orcamento" variant="primary">
                   Pedir orçamento
                 </ButtonLink>
                 {heroWhatsAppUrl ? (
                   <TrackedWhatsAppButtonLink
+                    className="sm:min-w-[11rem]"
                     href={heroWhatsAppUrl}
                     placement="home_hero"
                     variant="secondary"
@@ -83,7 +84,7 @@ export default function HomePage() {
                     Falar no WhatsApp
                   </TrackedWhatsAppButtonLink>
                 ) : (
-                  <ButtonLink href="/portfolio" variant="secondary">
+                  <ButtonLink className="sm:min-w-[10rem]" href="/portfolio" variant="secondary">
                     Ver projetos
                   </ButtonLink>
                 )}
@@ -101,19 +102,19 @@ export default function HomePage() {
           </Reveal>
 
           <div className="grid gap-5">
-            <Reveal as="div" className="panel p-6 sm:p-8" delay={90} variant="soft">
+            <Reveal as="div" className="panel p-5 sm:p-8" delay={90} variant="soft">
               <p className="meta-label">Projetos reais no ar</p>
               <h2 className="mt-4 text-2xl text-text">
                 Três sites publicados logo no início para mostrar, na prática, o nível do trabalho.
               </h2>
               <div className="mt-5 grid gap-3">
                 {caseStudies.map((caseStudy) => (
-                  <div className="panel-soft flex items-center justify-between gap-4 p-4" key={caseStudy.id}>
-                    <div>
+                  <div className="panel-soft flex items-center gap-4 p-4" key={caseStudy.id}>
+                    <div className="min-w-0 flex-1">
                       <p className="text-sm font-semibold text-text">{caseStudy.name}</p>
                       <p className="mt-1 text-sm text-text/72">{caseStudy.service}</p>
                     </div>
-                    <ButtonLink external href={caseStudy.url} size="sm" variant="secondary">
+                    <ButtonLink className="min-w-[7.75rem] shrink-0" external href={caseStudy.url} size="sm" variant="secondary">
                       Abrir site
                     </ButtonLink>
                   </div>
@@ -121,7 +122,7 @@ export default function HomePage() {
               </div>
             </Reveal>
 
-            <Reveal as="div" className="panel p-6 sm:p-8" delay={160} variant="soft">
+            <Reveal as="div" className="panel p-5 sm:p-8" delay={160} variant="soft">
               <p className="meta-label">Quando a WEBFORJA faz sentido</p>
               <h2 className="mt-4 text-2xl text-text">
                 Para negócios que precisam vender melhor, explicar o serviço e facilitar contato.
@@ -139,7 +140,7 @@ export default function HomePage() {
                         index === 0 ? "bg-primary" : index === 1 ? "bg-secondary" : "bg-signature"
                       }`}
                     />
-                    <span>{item}</span>
+                    <span className="min-w-0 leading-6">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -168,13 +169,13 @@ export default function HomePage() {
 
       <section className="section-space section-texture pt-0">
         <Container>
-          <div className="flex flex-wrap items-end justify-between gap-6">
+          <div className="flex flex-col items-start gap-5 md:flex-row md:items-end md:justify-between">
             <SectionIntro
               description="Os serviços da WEBFORJA foram organizados para fortalecer a marca, facilitar a venda e reduzir ruídos na operação."
               eyebrow="Serviços"
               title="Quatro frentes para vender melhor, fortalecer sua presença e ganhar eficiência"
             />
-            <ButtonLink href="/orcamento#formulario-orcamento" variant="secondary">
+            <ButtonLink className="sm:min-w-[13rem]" href="/orcamento#formulario-orcamento" variant="secondary">
               Falar sobre meu projeto
             </ButtonLink>
           </div>
@@ -212,13 +213,13 @@ export default function HomePage() {
 
       <section className="section-space section-texture pt-0">
         <Container>
-          <div className="flex flex-wrap items-end justify-between gap-6">
+          <div className="flex flex-col items-start gap-5 md:flex-row md:items-end md:justify-between">
             <SectionIntro
               description="Cada case mostra o projeto no ar, o desafio do cliente e a solução criada, de forma direta e sem exagero."
               eyebrow="Portfólio"
               title="Projetos publicados com contexto real para gerar confiança logo nos primeiros segundos"
             />
-            <ButtonLink href="/portfolio" variant="secondary">
+            <ButtonLink className="sm:min-w-[13rem]" href="/portfolio" variant="secondary">
               Ver portfólio completo
             </ButtonLink>
           </div>
@@ -273,7 +274,7 @@ export default function HomePage() {
               eyebrow="FAQ resumido"
               title="Dúvidas importantes antes de avançar para a proposta"
             />
-            <ButtonLink href="/faq" variant="secondary">
+            <ButtonLink className="sm:min-w-[10rem]" href="/faq" variant="secondary">
               Ver FAQ completo
             </ButtonLink>
           </div>
@@ -289,7 +290,7 @@ export default function HomePage() {
               eyebrow="Orçamento"
               title="Abra a conversa com as informações certas para receber um orçamento mais alinhado"
             />
-            <div className="panel p-6 sm:p-8">
+            <div className="panel p-5 sm:p-8">
               <p className="meta-label">Como tratamos a proposta</p>
               <div className="mt-5 grid gap-4">
                 {budgetExpectations.map((item, index) => (
@@ -301,7 +302,7 @@ export default function HomePage() {
                     variant="soft"
                   >
                     <span className="mt-1 h-2.5 w-2.5 rounded-full bg-signature" />
-                    <p className="text-sm text-text/90">{item}</p>
+                    <p className="min-w-0 text-sm leading-6 text-text/90">{item}</p>
                   </Reveal>
                 ))}
               </div>
