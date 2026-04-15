@@ -20,9 +20,9 @@ export default function FaqPage() {
         bullets={[
           "Orçamento, revisão e pagamento",
           "Formato do projeto e versão mobile",
-          "Domínio, hospedagem e manutenção opcional",
+          "Domínio, hospedagem e continuidade opcional",
         ]}
-        description="Esta página reúne respostas diretas para dúvidas recorrentes antes do início do projeto."
+        description="Respostas curtas para dúvidas recorrentes antes do início do projeto."
         eyebrow="FAQ"
         title="Perguntas frequentes para entender como a WEBFORJA trabalha"
       />
@@ -34,9 +34,10 @@ export default function FaqPage() {
       </section>
 
       <CtaBand
-        description="Se a sua dúvida não apareceu aqui, envie o contexto do projeto e seguimos a conversa a partir do seu cenário real."
-        eyebrow="Ainda com dúvida?"
-        title="Podemos esclarecer os detalhes do seu projeto já na etapa de orçamento"
+        description="Se a sua dúvida não apareceu aqui, envie o contexto do projeto e seguimos a conversa a partir do seu caso."
+        secondaryHref="/orcamento#formulario-orcamento"
+        secondaryLabel="Abrir briefing"
+        title="Os detalhes do seu projeto podem ser resolvidos já na etapa de orçamento"
       />
     </>
   );

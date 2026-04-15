@@ -10,10 +10,24 @@ export type HeroHighlight = {
   description: string;
 };
 
+export type ServiceChooser = {
+  whenToChoose: string;
+  solves: string;
+  bestFor: string;
+};
+
+export type ServiceAngle = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  bullets: string[];
+};
+
 export type ServicePageContent = {
   slug: "landing-pages" | "sites-institucionais" | "sistemas-web" | "automacoes";
   label: string;
   shortLabel: string;
+  cardTitle: string;
   title: string;
   description: string;
   highlight: string;
@@ -24,11 +38,16 @@ export type ServicePageContent = {
     bullets: string[];
   };
   overview: string[];
-  forWho: string[];
+  chooser: ServiceChooser;
+  angle: ServiceAngle;
   problems: string[];
   benefits: string[];
   examples: string[];
   faq: FaqItem[];
+  cta: {
+    title: string;
+    description: string;
+  };
 };
 
 export type CaseStudy = {
@@ -36,7 +55,8 @@ export type CaseStudy = {
   name: string;
   sector: string;
   service: string;
-  objective: string;
+  context: string;
+  problem: string;
   solution: string;
   highlights: string[];
   imageSrc: string;
@@ -54,22 +74,21 @@ export const siteConfig = {
   email: "contato@webforja.com.br",
   description:
     "Criamos sites institucionais, landing pages, sistemas web e automações para negócios que precisam vender melhor, transmitir confiança e organizar a operação.",
-  heroHeadline:
-    "Sites, landing pages, sistemas e automações para negócios que precisam vender com mais clareza.",
+  heroHeadline: "Sites, landing pages, sistemas e automações para vender melhor.",
   heroSubheadline:
-    "A WEBFORJA estrutura presença digital, captação e fluxos para escritórios, negócios locais e operações em crescimento que querem sair do improviso e facilitar orçamento, consulta ou agendamento.",
+    "A WEBFORJA cria estruturas digitais para negócios que precisam explicar melhor o serviço, captar com mais clareza e organizar a operação.",
   heroHighlights: [
     {
       label: "O que fazemos",
-      description: "Sites institucionais, landing pages, sistemas web e automações com foco comercial.",
+      description: "Sites, landing pages, sistemas web e automações com lógica comercial e técnica.",
     },
     {
       label: "Para quem",
-      description: "Negócios que precisam de presença profissional, prova real e jornada simples para contato.",
+      description: "Empresas que precisam transmitir confiança, captar melhor e reduzir improviso.",
     },
     {
-      label: "Próximo passo",
-      description: "Briefing objetivo, proposta personalizada e continuação no WhatsApp quando fizer sentido.",
+      label: "Como começa",
+      description: "Briefing objetivo, escopo recomendado e continuidade pelo canal mais prático.",
     },
   ] satisfies HeroHighlight[],
 };
@@ -119,308 +138,323 @@ export const servicePages: ServicePageContent[] = [
     slug: "landing-pages",
     label: "Landing Pages",
     shortLabel: "Landing Pages",
-    title: "Landing pages criadas para transformar clique em contato qualificado.",
+    cardTitle: "Landing pages para campanhas e captação",
+    title: "Landing pages com foco em clique virando contato.",
     description:
-      "Páginas orientadas a campanha, lançamento ou captação, com mensagem clara, leitura rápida no mobile e foco no próximo passo.",
-    highlight: "Mensagem direta, oferta clara e jornada pensada para conversão.",
+      "Páginas orientadas a campanha, oferta ou lançamento, com mensagem direta e menos distração.",
+    highlight: "Oferta clara e CTA forte",
     hero: {
       eyebrow: "Landing Pages",
-      title: "Quando a campanha precisa converter, a página precisa ser objetiva.",
+      title: "Quando a campanha pede resposta rápida, a página precisa converter sem rodeios.",
       description:
-        "Desenhamos landing pages para anúncios, lançamentos e captação de leads com estrutura enxuta, copy clara e foco no próximo passo.",
+        "Criamos landing pages enxutas para tráfego pago, lançamentos e captação com foco no próximo passo.",
       bullets: [
-        "Promessa clara sem excesso de texto",
-        "Chamada clara para lead, venda ou WhatsApp",
-        "Estrutura pronta para tráfego e testes",
+        "Promessa clara acima da dobra",
+        "Estrutura pensada para mobile e mídia",
+        "CTA alinhado a lead, venda ou WhatsApp",
       ],
     },
     overview: [
-      "Landing page não é só uma página bonita. Ela precisa organizar a proposta de valor, reduzir ruído e conduzir a pessoa para a ação certa.",
-      "Na WEBFORJA, cada landing page nasce do objetivo do projeto, da origem do tráfego e do que precisa acontecer depois do clique.",
+      "Landing page faz sentido quando a pessoa precisa entender a oferta em segundos e agir sem dispersão.",
+      "A estrutura nasce do objetivo da campanha, da origem do tráfego e da ação esperada depois do clique.",
     ],
-    forWho: [
-      "Negócios que investem em tráfego pago e querem captar melhor.",
-      "Empresas ou profissionais que vão lançar uma oferta específica.",
-      "Operações comerciais que precisam validar mensagem, nicho ou serviço.",
-    ],
+    chooser: {
+      whenToChoose: "Quando existe uma oferta, campanha ou lançamento com objetivo específico.",
+      solves: "Reduz ruído, destaca a proposta e encurta o caminho até o contato.",
+      bestFor: "Negócios que precisam captar, validar mensagem ou apoiar mídia paga.",
+    },
+    angle: {
+      eyebrow: "Conversão",
+      title: "O foco é tirar fricção entre o clique e a ação.",
+      description:
+        "A hierarquia prioriza promessa, prova e CTA sem transformar a página em um bloco longo de texto.",
+      bullets: [
+        "Headline e oferta alinhadas ao tráfego",
+        "Blocos curtos com prova e objeções essenciais",
+        "Estrutura pronta para testes e integrações",
+      ],
+    },
     problems: [
-      "Campanhas com clique, mas sem avanço para orçamento ou contato.",
-      "Páginas genéricas que não deixam claro o que está sendo vendido.",
-      "Experiência confusa no mobile, com perda de atenção e abandono.",
+      "Campanha gera clique, mas o visitante não avança para contato.",
+      "A oferta não fica clara e a página parece genérica.",
+      "No mobile, a leitura trava e a atenção se perde rápido.",
     ],
     benefits: [
-      "Oferta apresentada com mais clareza e menos distração.",
-      "Estrutura pronta para testes, mídia e acompanhamento futuro.",
-      "Mais apoio para campanha, lançamento e validação comercial.",
+      "Mais clareza para a oferta principal.",
+      "Jornada curta até lead, venda ou WhatsApp.",
+      "Base pronta para mídia, ajustes e testes futuros.",
     ],
     examples: [
-      "Página de captação para tráfego pago.",
-      "Landing para lançamento de serviço ou produto.",
-      "Página única para validar uma oferta com chamada mais direta para contato.",
+      "Captação de leads para tráfego pago.",
+      "Página de lançamento de serviço ou produto.",
+      "Oferta única para validar mensagem e conversão.",
     ],
     faq: [
       {
         question: "Landing page serve só para anúncios?",
         answer:
-          "Não. Ela também funciona para lançamentos, links de bio, campanhas de e-mail e qualquer fluxo em que a mensagem precise ser mais focada.",
+          "Não. Ela também funciona para lançamentos, links de bio, campanhas de e-mail e ofertas específicas.",
       },
       {
-        question: "Vocês criam a estrutura de conversão da página?",
-        answer:
-          "Sim. O trabalho inclui organizar conteúdo, hierarquia, chamadas e blocos estratégicos para facilitar a tomada de decisão.",
+        question: "Vocês ajudam na estrutura de conversão?",
+        answer: "Sim. Organizamos conteúdo, hierarquia, prova e chamadas para facilitar a decisão.",
       },
       {
-        question: "É possível evoluir a landing page depois?",
-        answer:
-          "Sim. A base já fica pronta para ajustes de copy, integrações e testes conforme o projeto amadurece.",
+        question: "Ela pode evoluir depois?",
+        answer: "Sim. A base já fica pronta para ajustes de copy, integrações e testes.",
       },
     ],
+    cta: {
+      title: "Vamos estruturar uma landing page que faça a campanha avançar.",
+      description: "Se o objetivo é captar melhor, o briefing ajuda a definir oferta, escopo e CTA.",
+    },
   },
   {
     slug: "sites-institucionais",
     label: "Sites Institucionais",
     shortLabel: "Sites Institucionais",
-    title: "Sites institucionais com autoridade visual, comunicação clara e base escalável.",
+    cardTitle: "Sites institucionais para autoridade e confiança",
+    title: "Sites institucionais que explicam valor antes da reunião.",
     description:
-      "Projetos para empresas que precisam se apresentar melhor, transmitir confiança e transformar presença digital em ativo comercial.",
-    highlight: "Posicionamento claro sem parecer site genérico.",
+      "Projetos para empresas que precisam se apresentar com mais confiança, clareza e leitura profissional.",
+    highlight: "Autoridade sem parecer genérico",
     hero: {
       eyebrow: "Sites Institucionais",
-      title: "Seu site precisa explicar o valor do negócio antes da reunião.",
+      title: "Seu site institucional precisa vender confiança antes do primeiro contato.",
       description:
-        "Criamos sites institucionais para marcas que querem unir clareza, identidade forte e uma jornada mais convincente para contato.",
+        "Criamos sites institucionais para marcas que precisam organizar a apresentação da empresa e facilitar a decisão do cliente.",
       bullets: [
-        "Narrativa comercial bem organizada",
-        "Estrutura pronta para novas páginas e cases",
-        "SEO de base e experiência mobile desde o início",
+        "Narrativa comercial bem distribuída",
+        "Base pronta para novas páginas e cases",
+        "SEO de base e mobile desde o início",
       ],
     },
     overview: [
-      "Site institucional é a base da presença digital de uma empresa. Ele precisa apresentar a marca com consistência, explicar a oferta e facilitar o próximo passo comercial.",
-      "Nosso foco é construir uma experiência que combine estética, informação útil, performance e capacidade de evolução.",
+      "Site institucional é a referência digital da marca. Ele precisa apresentar a empresa, mostrar maturidade e facilitar o contato.",
+      "O foco é unir posicionamento, informação útil e estrutura técnica para o site continuar servindo ao comercial depois da publicação.",
     ],
-    forWho: [
-      "Empresas que precisam elevar o padrão da marca no digital.",
-      "Escritórios, consultorias, negócios locais e operações B2B.",
-      "Marcas que saíram do improviso e querem uma apresentação profissional de verdade.",
-    ],
+    chooser: {
+      whenToChoose: "Quando a empresa precisa se apresentar melhor, ganhar confiança e apoiar a venda consultiva.",
+      solves: "Organiza a narrativa da marca e reduz a sensação de improviso na presença digital.",
+      bestFor: "Escritórios, consultorias, empresas técnicas e negócios locais com operação mais madura.",
+    },
+    angle: {
+      eyebrow: "Autoridade",
+      title: "O site precisa responder quem é a empresa, o que entrega e por que confiar.",
+      description:
+        "A experiência combina clareza institucional, hierarquia de conteúdo e espaço para expansão futura.",
+      bullets: [
+        "Mensagem alinhada ao posicionamento da marca",
+        "Páginas pensadas para serviços, cases e prova",
+        "Estrutura estável para crescer sem refazer tudo",
+      ],
+    },
     problems: [
-      "Site antigo que não representa a qualidade do negócio.",
-      "Informações desorganizadas, difíceis de navegar ou com visual amador.",
-      "Dificuldade para transmitir credibilidade e gerar contatos qualificados.",
+      "O site atual não representa a qualidade da empresa.",
+      "O visitante se perde entre páginas, textos e serviços.",
+      "A marca perde confiança antes mesmo da conversa comercial.",
     ],
     benefits: [
-      "Marca apresentada com mais clareza, confiança e consistência.",
-      "Estrutura pronta para SEO básico, portfólio e expansão futura.",
-      "Melhor apoio para comercial, atendimento e posicionamento da empresa.",
+      "Apresentação mais profissional e convincente.",
+      "Base pronta para SEO, portfólio e expansão.",
+      "Melhor apoio para comercial, atendimento e marca.",
     ],
     examples: [
       "Site institucional para escritório de advocacia.",
-      "Site para empresa técnica ou consultoria especializada.",
-      "Presença digital para negócio local com foco em contato.",
+      "Apresentação digital para consultoria ou empresa técnica.",
+      "Site de negócio local com foco em contato qualificado.",
     ],
     faq: [
       {
-        question: "O site institucional pode ter blog ou áreas futuras?",
-        answer:
-          "Sim. A V1 pode focar em apresentação e conversão, enquanto a estrutura já fica pronta para crescer sem refazer tudo.",
+        question: "O site pode crescer depois?",
+        answer: "Sim. A V1 pode ser mais enxuta e a estrutura já fica pronta para novas páginas.",
       },
       {
-        question: "Vocês ajudam a organizar o conteúdo do site?",
-        answer:
-          "Sim. Ajudamos a transformar informações soltas em uma narrativa mais clara e convincente para o visitante.",
+        question: "Vocês ajudam a organizar o conteúdo?",
+        answer: "Sim. Transformamos informações soltas em uma narrativa mais clara para o visitante.",
       },
       {
         question: "O projeto considera mobile e performance?",
-        answer:
-          "Sim. O site é pensado para funcionar bem em telas menores e com boa base de performance desde a implementação.",
+        answer: "Sim. O site já nasce pensado para leitura e navegação consistentes em telas menores.",
       },
     ],
+    cta: {
+      title: "Vamos desenhar um site institucional à altura da sua marca.",
+      description: "Se a empresa precisa se apresentar melhor, o briefing ajuda a definir a estrutura certa.",
+    },
   },
   {
     slug: "sistemas-web",
     label: "Sistemas Web",
     shortLabel: "Sistemas Web",
-    title: "Sistemas web para reduzir retrabalho e organizar processos reais.",
+    cardTitle: "Sistemas web para centralizar a operação",
+    title: "Sistemas web para organizar processo, dados e evolução futura.",
     description:
-      "Desenvolvemos aplicações personalizadas para fluxos que já não cabem mais em planilhas, improvisos ou ferramentas genéricas.",
-    highlight: "Menos ruído operacional, mais controle e mais aderência ao processo.",
+      "Aplicações personalizadas para fluxos que não cabem mais em planilhas ou ferramentas desconectadas.",
+    highlight: "Processo centralizado e escalável",
     hero: {
       eyebrow: "Sistemas Web",
-      title: "Quando a operação cresce, o sistema precisa acompanhar a lógica do negócio.",
+      title: "Quando a operação cresce, planilha e improviso começam a cobrar caro.",
       description:
-        "Construímos sistemas web para centralizar processos, automatizar etapas e dar mais previsibilidade ao dia a dia da operação.",
+        "Desenvolvemos sistemas web para centralizar rotinas, reduzir retrabalho e dar visibilidade ao que acontece no dia a dia.",
       bullets: [
-        "Fluxos modelados conforme a rotina do negócio",
-        "Base preparada para novas integrações",
-        "Interface clara para reduzir dependência operacional",
+        "Fluxos modelados pela lógica do negócio",
+        "Base preparada para módulos e integrações",
+        "Interface clara para uso frequente",
       ],
     },
     overview: [
-      "Nem todo negócio precisa de um software complexo, mas muitos já precisam de algo melhor do que processos manuais espalhados em várias ferramentas.",
-      "A WEBFORJA desenvolve sistemas com foco em aderência operacional, clareza de uso e arquitetura preparada para evolução.",
+      "Um sistema web entra quando o problema deixa de ser só execução manual e passa a exigir regra, controle e histórico.",
+      "O escopo começa pelo fluxo crítico e pode evoluir por etapas sem travar a operação.",
     ],
-    forWho: [
-      "Empresas que já sentem gargalos em processos manuais.",
-      "Operações que precisam centralizar dados, tarefas ou acompanhamentos.",
-      "Negócios que demandam regras específicas e não querem se adaptar a um sistema genérico.",
-    ],
+    chooser: {
+      whenToChoose: "Quando existem regras, aprovações, acompanhamento ou dados que precisam ficar em um só lugar.",
+      solves: "Centraliza processo e reduz dependência de planilhas, mensagens e controles paralelos.",
+      bestFor: "Operações que precisam de aderência real ao processo e espaço para crescer.",
+    },
+    angle: {
+      eyebrow: "Aderência ao negócio",
+      title: "Sistema web não é automação isolada. É a base onde o processo passa a morar.",
+      description:
+        "A prioridade é refletir a rotina real do negócio, com estrutura preparada para novas regras e integrações.",
+      bullets: [
+        "MVP orientado ao gargalo principal",
+        "Permissões, status e etapas definidas pelo fluxo",
+        "Arquitetura pronta para evolução contínua",
+      ],
+    },
     problems: [
-      "Retrabalho por falta de centralização e padronização.",
-      "Planilhas, mensagens e ferramentas desconectadas entre si.",
-      "Baixa visibilidade do andamento de pedidos, atendimentos ou rotinas internas.",
+      "Retrabalho causado por controles espalhados.",
+      "Baixa visibilidade do andamento das rotinas.",
+      "Ferramentas genéricas que não acompanham a lógica do negócio.",
     ],
     benefits: [
-      "Processos mais organizados e rastreáveis.",
-      "Ferramenta desenhada para o que o negócio realmente precisa.",
-      "Base técnica pronta para módulos, integrações e novas regras no futuro.",
+      "Processos mais rastreáveis e organizados.",
+      "Ferramenta feita para o fluxo real da operação.",
+      "Base pronta para módulos, integrações e novas regras.",
     ],
     examples: [
       "Painel interno para atendimento e acompanhamento.",
-      "Sistema para gestão de solicitações e fluxos específicos.",
-      "Aplicação para operação comercial ou administrativa.",
+      "Sistema para solicitações, aprovações e status.",
+      "Aplicação sob medida para rotinas comerciais ou administrativas.",
     ],
     faq: [
       {
-        question: "Vocês desenvolvem sistema totalmente personalizado?",
-        answer:
-          "Sim. O escopo é definido conforme o processo, as regras do negócio e o que precisa ser resolvido nesta fase do projeto.",
+        question: "O sistema é totalmente personalizado?",
+        answer: "Sim. O escopo é definido conforme o processo, as regras e a prioridade desta fase.",
       },
       {
-        question: "Dá para começar com uma versão enxuta?",
-        answer:
-          "Sim. Em muitos casos, faz mais sentido lançar uma primeira versão funcional e evoluir com base no uso real.",
+        question: "Dá para começar enxuto?",
+        answer: "Sim. Em muitos casos, a melhor escolha é lançar uma primeira versão funcional e evoluir depois.",
       },
       {
-        question: "É possível integrar com outras ferramentas depois?",
-        answer:
-          "Sim. A arquitetura já pode ser preparada para CRM, automações, dashboards e integrações específicas.",
+        question: "É possível integrar com outras ferramentas?",
+        answer: "Sim. A arquitetura já pode nascer preparada para CRM, dashboards e integrações futuras.",
       },
     ],
+    cta: {
+      title: "Vamos transformar o gargalo do processo em um sistema útil.",
+      description: "Se a operação já não cabe no improviso, o briefing ajuda a priorizar o que entra primeiro.",
+    },
   },
   {
     slug: "automacoes",
     label: "Automações",
     shortLabel: "Automações",
-    title: "Automações para ganhar tempo, reduzir falhas e dar previsibilidade ao fluxo.",
+    cardTitle: "Automações para ganhar velocidade e previsibilidade",
+    title: "Automações para eliminar tarefas repetitivas e reduzir falhas.",
     description:
-      "Automatizamos etapas repetitivas e conexões entre ferramentas para liberar o time do trabalho manual e dar mais consistência à operação.",
-    highlight: "Fluxos pensados para a rotina real do negócio.",
+      "Fluxos conectando ferramentas, atendimento e operação para o time gastar menos energia com trabalho manual.",
+    highlight: "Menos tarefa manual, mais previsibilidade",
     hero: {
       eyebrow: "Automações",
-      title: "Automatizar bem é desenhar um fluxo confiável para o negócio funcionar melhor.",
+      title: "Se a rotina repete a mesma ação todo dia, isso já pode virar automação.",
       description:
-        "Criamos automações que conectam ferramentas, eliminam tarefas repetitivas e ajudam a operação a responder com mais velocidade e consistência.",
+        "Criamos automações para mover dados, acionar equipes e manter o fluxo andando sem depender de copiar e colar.",
       bullets: [
-        "Mapeamento do fluxo antes da automação",
-        "Integrações planejadas para evitar retrabalho",
-        "Base pronta para evoluir com CRM e novos canais",
+        "Mapeamento do processo antes da integração",
+        "Regras claras para evitar falhas silenciosas",
+        "Base pronta para CRM, notificações e novos canais",
       ],
     },
     overview: [
-      "Automação não é só economia de tempo. Ela também melhora consistência, reduz falhas humanas e libera atenção do time para atividades mais importantes.",
-      "Nosso trabalho parte do processo real, identifica gargalos e conecta as ferramentas com praticidade.",
+      "Automação resolve etapas previsíveis entre ferramentas. Ela não substitui um sistema completo quando o processo exige regra própria, histórico e interface dedicada.",
+      "O trabalho começa pelo ganho imediato: menos repetição, menos atraso e menos perda no caminho.",
     ],
-    forWho: [
-      "Negócios que repetem tarefas em atendimento, vendas ou operação.",
-      "Empresas que precisam integrar formulários, CRM, planilhas e notificações.",
-      "Times enxutos que querem ganhar eficiência sem criar mais complexidade.",
-    ],
+    chooser: {
+      whenToChoose: "Quando o gargalo está em tarefas repetitivas, repasse de informações ou demora entre ferramentas.",
+      solves: "Dá velocidade ao fluxo e reduz perda de lead, atraso e erro manual.",
+      bestFor: "Times enxutos que querem integrar site, CRM, planilhas, notificações ou atendimento.",
+    },
+    angle: {
+      eyebrow: "Velocidade operacional",
+      title: "Automação é sobre fluxo confiável, não sobre empilhar ferramentas.",
+      description:
+        "A solução certa conecta etapas previsíveis e deixa claro onde o humano ainda precisa entrar.",
+      bullets: [
+        "Integrações com regra e destino definidos",
+        "Notificações e repasses automáticos",
+        "Fluxo preparado para novas conexões depois",
+      ],
+    },
     problems: [
-      "Copiar e colar informações entre ferramentas todos os dias.",
-      "Leads, demandas ou pedidos se perdendo no caminho.",
-      "Dependência excessiva de processos manuais para tarefas previsíveis.",
+      "Copiar e colar informações entre sistemas todos os dias.",
+      "Leads, pedidos ou demandas se perdendo no fluxo.",
+      "Dependência de tarefas manuais para rotinas previsíveis.",
     ],
     benefits: [
-      "Mais velocidade e menos falha operacional.",
-      "Fluxos mais previsíveis e fáceis de acompanhar.",
-      "Estrutura pronta para crescer com novas integrações ou regras.",
+      "Mais velocidade na operação diária.",
+      "Menos falha humana e menos retrabalho.",
+      "Fluxo mais previsível e fácil de acompanhar.",
     ],
     examples: [
-      "Formulário que direciona o contato para CRM, planilha ou atendimento.",
-      "Notificações automáticas para equipe comercial ou atendimento.",
-      "Rotinas que conectam site, sistema interno e ferramentas externas.",
+      "Formulário enviando lead para CRM e atendimento.",
+      "Notificações automáticas para comercial ou operação.",
+      "Rotinas conectando site, sistema interno e ferramentas externas.",
     ],
     faq: [
       {
-        question: "Vocês automatizam processos já existentes?",
-        answer:
-          "Sim. Primeiro entendemos o fluxo atual, depois organizamos o que faz sentido automatizar nesta etapa.",
+        question: "Vocês automatizam processos que já existem?",
+        answer: "Sim. Primeiro mapeamos o fluxo atual e automatizamos o que faz sentido nesta etapa.",
       },
       {
-        question: "Automação serve só para grandes empresas?",
-        answer:
-          "Não. Negócios menores costumam ganhar muito com automações bem escolhidas porque o time costuma ser mais enxuto.",
+        question: "Automações servem só para empresas grandes?",
+        answer: "Não. Times menores costumam ganhar muito quando deixam de repetir tarefas manuais.",
       },
       {
-        question: "É possível integrar com o site ou sistema depois?",
-        answer:
-          "Sim. As automações podem ser tratadas como uma camada complementar e evoluir junto com o restante da operação digital.",
+        question: "Ela pode evoluir junto com site ou sistema?",
+        answer: "Sim. A automação pode funcionar como uma camada complementar e crescer com a operação.",
       },
     ],
-  },
-];
-
-export const homeProofPoints = [
-  {
-    title: "3 projetos reais já publicados",
-    description: "Atlas Cálculos, Castro & Alves Advogados e Erick Davi Barbearia estão no ar.",
-  },
-  {
-    title: "Portfólio com sites no ar",
-    description:
-      "Cada case leva para um projeto real, publicado e acessível, sem exemplo genérico nem material provisório.",
-  },
-  {
-    title: "Estrutura pronta para receber contatos",
-    description:
-      "Mesmo antes da automação completa, o orçamento segue ativo e a conversa pode continuar pelo WhatsApp.",
+    cta: {
+      title: "Vamos automatizar o que hoje toma tempo demais do seu time.",
+      description: "Se o fluxo já é previsível, o briefing ajuda a definir onde a automação gera mais impacto.",
+    },
   },
 ];
 
 export const homeClientFit = [
-  "Escritórios e empresas que precisam transmitir autoridade com mais clareza.",
+  "Empresas que precisam explicar melhor o serviço e passar confiança rápido.",
   "Negócios locais que querem transformar visita em contato ou agendamento.",
-  "Operações que precisam de site, sistema ou automação sem depender de solução genérica.",
-];
-
-export const homeDifferentials = [
-  {
-    title: "Copy e estrutura pensadas para decisão",
-    description:
-      "O visitante entende rápido o que você faz, para quem faz e qual é o próximo passo para contratar.",
-  },
-  {
-    title: "Design com função comercial",
-    description:
-      "A estética reforça confiança e valor percebido sem atrapalhar leitura, navegação ou pedido de contato.",
-  },
-  {
-    title: "Código pronto para crescer",
-    description:
-      "A base técnica já nasce organizada para evoluções, integrações e novas páginas sem refatoração desnecessária.",
-  },
-  {
-    title: "Processo claro do briefing à entrega",
-    description:
-      "Escopo, proposta, desenvolvimento, revisão e publicação com comunicação objetiva ao longo do caminho.",
-  },
+  "Operações em crescimento que precisam de site, sistema ou automação com critério.",
 ];
 
 export const caseStudies = [
   {
     id: "atlas-calculos",
     name: "Atlas Cálculos",
-    sector: "Cálculos trabalhistas para advogados",
+    sector: "Cálculos trabalhistas para advocacia",
     service: "Site institucional",
-    objective:
-      "Apresentar a Atlas como suporte técnico em cálculos trabalhistas para advogados e escritórios, com comunicação clara e contato rápido.",
+    context:
+      "Empresa técnica que precisava apresentar o serviço de forma clara para advogados e escritórios.",
+    problem:
+      "A proposta de valor era específica e precisava ser entendida rápido, sem excesso de texto nem ruído.",
     solution:
-      "Estrutura institucional com páginas organizadas por etapas, linguagem clara e chamada mais direta para solicitar uma análise.",
+      "Estrutura institucional com etapas do serviço, linguagem objetiva e CTA direto para solicitar análise.",
     highlights: [
-      "Informações organizadas por etapas",
-      "Linguagem clara e fácil de entender",
-      "Solicitação de análise pelo WhatsApp",
+      "Etapas do serviço organizadas",
+      "Linguagem clara para público jurídico",
+      "Contato rápido via WhatsApp",
     ],
     imageSrc: "/portfolio/atlas-calculos-hero.png",
     imageAlt: "Screenshot do site Atlas Cálculos",
@@ -431,14 +465,16 @@ export const caseStudies = [
     name: "Castro & Alves Advogados",
     sector: "Advocacia especializada",
     service: "Site institucional",
-    objective:
-      "Fortalecer a presença digital do escritório com uma apresentação mais confiável, clara e orientada a consulta.",
+    context:
+      "Escritório com áreas diferentes e necessidade de comunicar autoridade com leitura simples.",
+    problem:
+      "O visitante precisava achar área de atuação, entender o escritório e avançar para consulta sem se perder.",
     solution:
-      "Site institucional com áreas de atuação em destaque, apresentação do escritório, agendamento de consulta e calculadoras jurídicas.",
+      "Site institucional com áreas em destaque, apresentação do escritório, agendamento e calculadoras jurídicas.",
     highlights: [
-      "Trabalhista, Previdenciário, Saúde e Isenção de IR",
-      "Agendamento de consulta em destaque",
-      "Calculadoras jurídicas na jornada",
+      "Áreas de atuação bem distribuídas",
+      "Consulta em destaque",
+      "Ferramentas jurídicas na jornada",
     ],
     imageSrc: "/portfolio/castro-e-alves.png",
     imageAlt: "Screenshot do site Castro & Alves Advogados",
@@ -449,14 +485,16 @@ export const caseStudies = [
     name: "Erick Davi Barbearia",
     sector: "Barbearia premium em Itaquera",
     service: "Site + painel administrativo",
-    objective:
-      "Profissionalizar a presença da barbearia, facilitar o agendamento online e dar ao barbeiro controle real sobre agenda, reservas e pagamentos.",
+    context:
+      "Barbearia premium que precisava profissionalizar a marca e organizar reservas.",
+    problem:
+      "Agenda, pagamentos e horários dependiam de controle manual e davam pouca autonomia ao negócio.",
     solution:
-      "Site comercial com serviços, valores e reserva com sinal de R$ 15,00 integrado a um painel administrativo com login, indicadores financeiros, inserção manual de horários, bloqueio de agenda e acompanhamento completo das reservas.",
+      "Site comercial com reservas e sinal, conectado a um painel administrativo com agenda, bloqueios e indicadores.",
     highlights: [
-      "Agendamento online com sinal",
-      "Painel administrativo com agenda e reservas",
-      "Indicadores financeiros e status de pagamento",
+      "Reserva online com sinal",
+      "Painel com agenda e bloqueios",
+      "Indicadores financeiros e pagamentos",
     ],
     imageSrc: "/portfolio/erick-davi-barbearia.png",
     imageAlt: "Screenshot do site Erick Davi Barbearia",
@@ -467,99 +505,89 @@ export const caseStudies = [
 export const processSteps = [
   {
     title: "Briefing",
-    description:
-      "Entendemos contexto, objetivo, prioridade e escopo inicial para construir a direção mais coerente para o projeto.",
+    description: "Contexto, objetivo e prioridade para definir a direção do projeto.",
   },
   {
     title: "Análise",
-    description:
-      "Organizamos referências, necessidades, prioridades e caminhos técnicos antes de transformar isso em proposta.",
+    description: "Organização de necessidades, referências e caminho técnico antes da proposta.",
   },
   {
     title: "Proposta",
-    description:
-      "Apresentamos o escopo recomendado, a estrutura do projeto e as condições comerciais de forma objetiva.",
+    description: "Escopo recomendado, estrutura do projeto e condições comerciais.",
   },
   {
     title: "Sinal",
-    description:
-      "Com a aprovação, reservamos a agenda e iniciamos o projeto conforme a combinação fechada.",
+    description: "Com a aprovação, a agenda é reservada e o projeto entra em produção.",
   },
   {
     title: "Desenvolvimento",
-    description:
-      "Construção da solução com foco em clareza, performance, consistência visual e aderência ao objetivo do negócio.",
+    description: "Construção da solução com foco em clareza, performance e aderência ao objetivo.",
   },
   {
     title: "Revisão",
-    description:
-      "Ajustes finos para lapidar conteúdo, interface e comportamento antes da publicação.",
+    description: "Ajustes finos antes da publicação.",
   },
   {
     title: "Entrega",
-    description:
-      "Publicação, documentação essencial e orientação sobre o uso da solução conforme o projeto.",
+    description: "Publicação, orientação essencial e fechamento da etapa contratada.",
   },
   {
     title: "Suporte opcional",
-    description:
-      "Depois da entrega, você pode seguir com autonomia ou contratar acompanhamento contínuo quando fizer sentido.",
-  },
-];
-
-export const maintenanceChoices = [
-  {
-    title: "Entrega com autonomia",
-    description:
-      "Ideal para quem quer receber o projeto com organização, documentação essencial e liberdade para conduzir a próxima etapa internamente.",
-  },
-  {
-    title: "Continuidade e manutenção",
-    description:
-      "Ideal para quem prefere manter a evolução com suporte, pequenos ajustes, acompanhamento técnico e uma relação de longo prazo.",
+    description: "Depois da entrega, o projeto pode seguir com autonomia ou continuidade.",
   },
 ];
 
 export const generalFaq: FaqItem[] = [
   {
     question: "Como funciona o orçamento?",
-    answer:
-      "Cada orçamento é personalizado. Avaliamos contexto, escopo, objetivos e complexidade antes de propor a melhor estrutura para o projeto.",
+    answer: "Cada proposta considera objetivo, escopo, prioridade e complexidade do projeto.",
   },
   {
     question: "Vocês fazem projetos personalizados?",
-    answer:
-      "Sim. O foco da WEBFORJA é construir soluções alinhadas ao negócio, sem empurrar pacote genérico como resposta para tudo.",
+    answer: "Sim. A solução é definida conforme o cenário do negócio, não por pacote fixo.",
   },
   {
     question: "O site terá versão mobile?",
-    answer:
-      "Sim. Todos os projetos são pensados para funcionar bem em desktop e mobile, com atenção à leitura, navegação e performance.",
+    answer: "Sim. Todos os projetos já são pensados para leitura, navegação e performance em mobile.",
   },
   {
     question: "Vocês fazem manutenção?",
-    answer:
-      "Sim, como serviço complementar. Depois da entrega, você pode escolher entre seguir com autonomia ou manter acompanhamento contínuo.",
+    answer: "Sim, como continuidade opcional depois da entrega.",
   },
   {
     question: "Eu posso pedir alterações?",
-    answer:
-      "Sim. O projeto prevê etapa de revisão e ajustes, e mudanças adicionais podem ser tratadas conforme o momento e o escopo.",
+    answer: "Sim. O projeto prevê revisão e ajustes adicionais podem ser tratados conforme o escopo.",
   },
   {
     question: "Vocês trabalham com sistemas personalizados?",
-    answer:
-      "Sim. Desenvolvemos sistemas web e fluxos digitais quando o processo do negócio pede algo além de um site institucional.",
+    answer: "Sim. Quando o processo pede algo além de um site, desenvolvemos sistemas web sob medida.",
   },
   {
-    question: "Vocês registram domínio e hospedagem?",
-    answer:
-      "Podemos orientar a contratação e a melhor estrutura para o projeto. Em alguns casos, também apoiamos a configuração inicial.",
+    question: "Vocês ajudam com domínio e hospedagem?",
+    answer: "Sim. Podemos orientar a contratação e apoiar a configuração inicial quando fizer sentido.",
   },
   {
     question: "Como funciona o pagamento?",
-    answer:
-      "A proposta comercial apresenta as condições combinadas para o projeto, incluindo sinal para início e possibilidade de parcelamento com condições informadas ao cliente.",
+    answer: "As condições aparecem na proposta, incluindo sinal para início e parcelamento quando aplicável.",
+  },
+];
+
+export const budgetFaq: FaqItem[] = [
+  {
+    question: "Como a proposta é definida?",
+    answer: "Ela considera objetivo, escopo, prioridades e complexidade do projeto.",
+  },
+  {
+    question: "Vocês trabalham com preço fechado de tabela?",
+    answer: "Não. Landing pages, sites, sistemas web e automações têm escopos diferentes.",
+  },
+  {
+    question: "Como funciona pagamento e sinal?",
+    answer: "As condições aparecem na proposta, incluindo sinal para início e parcelamento quando aplicável.",
+  },
+  {
+    question: "E se eu ainda não souber o formato?",
+    answer: "Sem problema. Você pode marcar “não sei ao certo” e usamos o briefing para indicar a melhor direção.",
   },
 ];
 
@@ -572,22 +600,22 @@ export const budgetProjectTypes = [
   {
     value: "site-institucional",
     label: "Site Institucional",
-    description: "Presença digital profissional para apresentar marca, serviços e autoridade.",
+    description: "Presença digital profissional para marca, serviços e contato.",
   },
   {
     value: "sistema-web",
     label: "Sistema Web",
-    description: "Aplicação personalizada para organizar processos, dados ou operação.",
+    description: "Aplicação para organizar processos, dados ou operação.",
   },
   {
     value: "automacao",
     label: "Automação",
-    description: "Fluxo automatizado entre ferramentas, leads, atendimento ou operação.",
+    description: "Fluxo automatizado entre ferramentas, atendimento ou operação.",
   },
   {
     value: "nao-sei",
     label: "Não sei ao certo",
-    description: "Ajudamos a identificar qual formato faz mais sentido para o seu cenário.",
+    description: "Usamos o briefing para indicar o formato mais adequado.",
   },
 ];
 
@@ -600,38 +628,39 @@ export const budgetRanges = [
 ];
 
 export const aboutManifesto = [
-  "A WEBFORJA nasce para construir presença digital e soluções personalizadas com o cuidado de quem trata cada projeto como peça estratégica do negócio, não como produção em série.",
-  "Nosso trabalho mistura clareza, funcionalidade e pragmatismo. O objetivo não é só entregar um site bonito, mas estruturar algo que comunique melhor, funcione com consistência e acompanhe o crescimento da operação.",
+  "A WEBFORJA cria projetos digitais sob medida para negócios que precisam vender melhor, parecer mais confiáveis ou operar com menos atrito.",
+  "O trabalho combina direção comercial, design funcional e base técnica limpa para que cada entrega continue útil depois da publicação.",
 ];
 
 export const aboutPrinciples = [
   {
     title: "Personalização com critério",
-    description:
-      "Cada solução responde ao contexto do cliente, à maturidade do negócio e ao objetivo real do projeto.",
+    description: "A solução responde ao contexto, à maturidade do negócio e ao objetivo real do projeto.",
   },
   {
-    title: "Clareza como valor",
-    description:
-      "Organizamos informação, estrutura e comunicação para que a experiência seja bonita, mas também fácil de entender e navegar.",
+    title: "Clareza na comunicação",
+    description: "A informação é organizada para o visitante entender rápido e agir sem fricção.",
   },
   {
-    title: "Funcionalidade que sustenta a estética",
-    description:
-      "Design, código, conteúdo e performance trabalham juntos para entregar uma experiência profissional de verdade.",
+    title: "Design com função",
+    description: "Estética, conteúdo e navegação trabalham juntos para sustentar a percepção de valor.",
   },
   {
-    title: "Resultado sem promessa vazia",
-    description:
-      "Falamos em direção, processo e eficiência, sem vender atalho ou prazo irreal para projeto personalizado.",
+    title: "Tecnologia pronta para crescer",
+    description: "A base técnica já nasce preparada para ajustes, integrações e novas etapas.",
   },
 ];
 
+export const aboutWorkingStyle = [
+  "O briefing vira escopo real, não um texto genérico de proposta.",
+  "Copy, layout e implementação são pensados como uma única experiência.",
+  "Cada projeto é entregue para funcionar bem agora e evoluir sem retrabalho desnecessário.",
+];
+
 export const budgetExpectations = [
-  "O orçamento é personalizado conforme objetivo, escopo e complexidade do projeto.",
-  "Não publicamos preço fechado de criação porque cada solução tem prioridades e exigências diferentes.",
-  "O pagamento de sinal é tratado na proposta, e parcelamento pode ser avaliado com as condições informadas ao cliente.",
-  "Mesmo sem a integração final no lançamento, o contato pode continuar normalmente pelo WhatsApp.",
+  "A proposta é personalizada conforme objetivo, escopo e complexidade.",
+  "Se ainda houver dúvida sobre o formato, o briefing também ajuda a escolher a solução.",
+  "Se o envio automático falhar, o contato pode continuar com as informações já preenchidas.",
 ];
 
 export function getServiceBySlug(slug: ServicePageContent["slug"]) {

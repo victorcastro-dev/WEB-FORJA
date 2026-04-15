@@ -15,8 +15,8 @@ export function CtaBand({
   eyebrow = "Próximo passo",
   title,
   description,
-  secondaryLabel = "Falar sobre meu projeto",
-  secondaryHref = "/orcamento#formulario-orcamento",
+  secondaryLabel = "Ver serviços",
+  secondaryHref = "/servicos",
 }: CtaBandProps) {
   return (
     <section className="section-space section-texture section-texture-band pt-0">

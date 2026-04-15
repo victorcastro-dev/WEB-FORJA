@@ -22,17 +22,17 @@ export default function ProcessPage() {
         bullets={[
           "Briefing, análise e proposta personalizada",
           "Desenvolvimento com revisão antes da entrega",
-          "Suporte e manutenção só quando fizer sentido",
+          "Continuidade opcional depois da publicação",
         ]}
-        description="O processo da WEBFORJA foi desenhado para dar previsibilidade sem engessar o projeto. A ideia é alinhar bem o escopo, reduzir ruído e manter o trabalho profissional do início ao fim."
+        description="O processo da WEBFORJA foi desenhado para dar previsibilidade sem burocracia desnecessária."
         eyebrow="Processo"
-        title="Um fluxo claro para transformar briefing em entrega com segurança e critério"
+        title="Um fluxo claro para tirar o projeto do papel com segurança"
       />
 
       <section className="section-space section-texture pt-0">
         <Container className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <SectionIntro
-            description="Essas etapas ajudam a organizar expectativa, tomada de decisão e evolução do projeto sem transformar a experiência em burocracia."
+            description="Cada etapa existe para alinhar escopo, manter ritmo e reduzir ruído no caminho."
             eyebrow="Etapas"
             title="Como a WEBFORJA conduz um projeto personalizado"
           />
@@ -43,32 +43,30 @@ export default function ProcessPage() {
       <section className="section-space section-texture pt-0">
         <Container className="grid gap-5 md:grid-cols-3">
           <Reveal as="article" className="panel h-full p-6" variant="scale">
-            <h3 className="text-xl text-text">Orçamento personalizado</h3>
+            <h2 className="text-xl text-text">Escopo sob medida</h2>
             <p className="mt-4 text-sm sm:text-base">
-              O escopo não nasce de tabela fixa. Ele é definido conforme contexto, objetivos,
-              prioridades e complexidade.
+              A proposta considera contexto, prioridade e complexidade do projeto.
             </p>
           </Reveal>
           <Reveal as="article" className="panel h-full p-6" delay={80} variant="scale">
-            <h3 className="text-xl text-text">Pagamento com sinal</h3>
+            <h2 className="text-xl text-text">Início com sinal</h2>
             <p className="mt-4 text-sm sm:text-base">
-              Depois da aprovação da proposta, o projeto é iniciado com sinal conforme a condição
-              apresentada ao cliente.
+              Depois da aprovação, a agenda é reservada conforme a condição apresentada na proposta.
             </p>
           </Reveal>
           <Reveal as="article" className="panel h-full p-6" delay={160} variant="scale">
-            <h3 className="text-xl text-text">Continuidade opcional</h3>
+            <h2 className="text-xl text-text">Continuidade opcional</h2>
             <p className="mt-4 text-sm sm:text-base">
-              Depois da entrega, você pode seguir com autonomia ou contratar suporte e manutenção
-              conforme a necessidade.
+              Depois da entrega, você pode seguir com autonomia ou contratar suporte contínuo.
             </p>
           </Reveal>
         </Container>
       </section>
 
       <CtaBand
-        description="Se você quer entender como esse processo se aplica ao seu cenário, o próximo passo é abrir o contexto do projeto."
-        eyebrow="Alinhamento"
+        description="Se o processo fizer sentido para o seu momento, o próximo passo é abrir o contexto do projeto."
+        secondaryHref="/orcamento#formulario-orcamento"
+        secondaryLabel="Abrir briefing"
         title="Vamos estruturar a proposta com clareza antes de qualquer decisão"
       />
     </>

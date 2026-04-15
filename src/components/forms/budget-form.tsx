@@ -239,11 +239,11 @@ export function BudgetForm() {
             </a>
           ) : null}
           <Button
+            className="sm:min-w-[11rem]"
             onClick={() => {
               setSubmissionState({ status: "idle" });
               setErrors({});
             }}
-            className="sm:min-w-[11rem]"
             variant="secondary"
           >
             Enviar outro pedido
@@ -259,14 +259,14 @@ export function BudgetForm() {
         <div className="max-w-2xl">
           <span className="eyebrow">Briefing inicial</span>
           <h3 className="mt-5 text-[2.2rem] leading-[1.08] text-text">
-            Compartilhe as informações principais para receber uma proposta mais alinhada.
+            Compartilhe o essencial para eu entender o projeto.
           </h3>
           <p className="mt-4 text-base text-text/80">
-            Você não precisa chegar com tudo definido. A ideia é entender cenário, prioridade e
-            direção para orientar o próximo passo com clareza.
+            Se ainda existir dúvida sobre o formato, descreva o cenário. O briefing também serve
+            para orientar a solução.
           </p>
         </div>
-        <span className="signature-chip">Sem pacote engessado</span>
+        <span className="signature-chip">Briefing objetivo</span>
       </div>
 
       <div className="sr-only" aria-hidden="true">
@@ -288,7 +288,7 @@ export function BudgetForm() {
         <section>
           <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
             <p className="meta-label">Contato</p>
-            <p className="text-sm text-muted">Campos essenciais para retorno e contexto.</p>
+            <p className="text-sm text-muted">Retorno e contexto.</p>
           </div>
           <div className="mt-5 grid gap-6 md:grid-cols-2">
             <Field
@@ -336,8 +336,7 @@ export function BudgetForm() {
           <fieldset>
             <legend className="meta-label">Tipo de projeto *</legend>
             <p className="helper-text" id="project-type-help">
-              {selectedProjectType?.description ??
-                "Escolha a opção que mais se aproxima do que você precisa hoje."}
+              {selectedProjectType?.description ?? "Escolha a opção mais próxima do que você precisa hoje."}
             </p>
             <div className="mt-5 grid gap-3 md:grid-cols-2">
               {budgetProjectTypes.map((item) => (
@@ -369,9 +368,7 @@ export function BudgetForm() {
                 />
               ))}
             </div>
-            <p className="helper-text">
-              A proposta final sempre é personalizada de acordo com escopo e prioridades.
-            </p>
+            <p className="helper-text">A proposta final é ajustada ao escopo e às prioridades.</p>
             {errors.budgetRange ? <ErrorText id="budgetRange-error">{errors.budgetRange}</ErrorText> : null}
           </fieldset>
 
@@ -454,10 +451,15 @@ export function BudgetForm() {
 
       <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="max-w-xl text-sm text-muted">
-          Ao enviar, suas informações seguem para o canal disponível no momento e, se preciso, a
-          conversa continua pelo WhatsApp sem perder o que foi preenchido.
+          Ao enviar, suas informações seguem para o canal disponível e a conversa pode continuar
+          sem perder o briefing.
         </p>
-        <Button className="w-full sm:min-w-[11rem] sm:w-auto" disabled={submissionState.status === "loading"} type="submit" variant="primary">
+        <Button
+          className="w-full sm:min-w-[11rem] sm:w-auto"
+          disabled={submissionState.status === "loading"}
+          type="submit"
+          variant="primary"
+        >
           {submissionState.status === "loading" ? "Enviando..." : "Pedir orçamento"}
         </Button>
       </div>

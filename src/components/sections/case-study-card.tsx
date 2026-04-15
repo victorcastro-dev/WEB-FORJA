@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import type { CaseStudy } from "@/content/site-content";
 import { ButtonLink } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
+import type { CaseStudy } from "@/content/site-content";
 import { cn } from "@/lib/utils";
 
 type CaseStudyCardProps = {
@@ -81,16 +81,33 @@ export function CaseStudyCard({ caseStudy, compact = false, delay = 0 }: CaseStu
 
         <h3 className="mt-4 text-[1.75rem] leading-tight text-text">{caseStudy.name}</h3>
 
-        <dl className={cn("mt-5 grid gap-3", !compact && "md:grid-cols-2")}>
-          <div className="panel-soft p-4">
-            <dt className="meta-label">Objetivo do cliente</dt>
-            <dd className="mt-2 min-w-0 text-sm leading-6 text-text/88">{caseStudy.objective}</dd>
-          </div>
-          <div className="panel-soft p-4">
-            <dt className="meta-label">Solução desenvolvida</dt>
-            <dd className="mt-2 min-w-0 text-sm leading-6 text-text/88">{caseStudy.solution}</dd>
-          </div>
-        </dl>
+        {compact ? (
+          <dl className="mt-5 grid gap-3">
+            <div className="panel-soft p-4">
+              <dt className="meta-label">Contexto</dt>
+              <dd className="mt-2 min-w-0 text-sm leading-6 text-text/88">{caseStudy.context}</dd>
+            </div>
+            <div className="panel-soft p-4">
+              <dt className="meta-label">Solução</dt>
+              <dd className="mt-2 min-w-0 text-sm leading-6 text-text/88">{caseStudy.solution}</dd>
+            </div>
+          </dl>
+        ) : (
+          <dl className="mt-5 grid gap-3">
+            <div className="panel-soft p-4">
+              <dt className="meta-label">Contexto</dt>
+              <dd className="mt-2 min-w-0 text-sm leading-6 text-text/88">{caseStudy.context}</dd>
+            </div>
+            <div className="panel-soft p-4">
+              <dt className="meta-label">Problema</dt>
+              <dd className="mt-2 min-w-0 text-sm leading-6 text-text/88">{caseStudy.problem}</dd>
+            </div>
+            <div className="panel-soft p-4">
+              <dt className="meta-label">Solução</dt>
+              <dd className="mt-2 min-w-0 text-sm leading-6 text-text/88">{caseStudy.solution}</dd>
+            </div>
+          </dl>
+        )}
 
         <div className="mt-4 flex flex-wrap gap-2.5">
           {highlightItems.map((highlight) => (
@@ -127,7 +144,12 @@ export function CaseStudyCard({ caseStudy, compact = false, delay = 0 }: CaseStu
               ) : null}
             </>
           ) : compact ? (
-            <ButtonLink className="sm:min-w-[8.5rem]" href={`/portfolio#${caseStudy.id}`} size="sm" variant="secondary">
+            <ButtonLink
+              className="sm:min-w-[8.5rem]"
+              href={`/portfolio#${caseStudy.id}`}
+              size="sm"
+              variant="secondary"
+            >
               Ver case
             </ButtonLink>
           ) : null}

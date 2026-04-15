@@ -15,9 +15,6 @@ import {
   caseStudies,
   generalFaq,
   homeClientFit,
-  homeDifferentials,
-  homeProofPoints,
-  maintenanceChoices,
   processSteps,
   servicePages,
   siteConfig,
@@ -103,10 +100,13 @@ export default function HomePage() {
 
           <div className="grid gap-5">
             <Reveal as="div" className="panel p-5 sm:p-8" delay={90} variant="soft">
-              <p className="meta-label">Projetos reais no ar</p>
-              <h2 className="mt-4 text-2xl text-text">
-                Três sites publicados logo no início para mostrar, na prática, o nível do trabalho.
-              </h2>
+              <div className="flex items-center justify-between gap-4">
+                <p className="meta-label">Projetos reais no ar</p>
+                <ButtonLink href="/portfolio" size="sm" variant="secondary">
+                  Ver portfólio
+                </ButtonLink>
+              </div>
+              <h2 className="mt-4 text-2xl text-text">Três cases publicados para provar execução rápido.</h2>
               <div className="mt-5 grid gap-3">
                 {caseStudies.map((caseStudy) => (
                   <div className="panel-soft flex items-center gap-4 p-4" key={caseStudy.id}>
@@ -124,15 +124,8 @@ export default function HomePage() {
 
             <Reveal as="div" className="panel p-5 sm:p-8" delay={160} variant="soft">
               <p className="meta-label">Quando a WEBFORJA faz sentido</p>
-              <h2 className="mt-4 text-2xl text-text">
-                Para negócios que precisam vender melhor, explicar o serviço e facilitar contato.
-              </h2>
-              <p className="mt-4 text-base text-text/80">
-                O foco está em organizar a mensagem, fortalecer a confiança e dar um próximo passo
-                comercial claro para o visitante.
-              </p>
-              <div className="accent-line my-6" />
-              <ul className="grid gap-3">
+              <h2 className="mt-4 text-2xl text-text">Para negócios que precisam clareza comercial e estrutura.</h2>
+              <ul className="mt-6 grid gap-3">
                 {homeClientFit.map((item, index) => (
                   <li className="flex items-start gap-3 text-sm text-text/90" key={item}>
                     <span
@@ -144,26 +137,13 @@ export default function HomePage() {
                   </li>
                 ))}
               </ul>
+              <div className="accent-line my-6" />
+              <p className="text-sm text-text/78">
+                Se ainda houver dúvida entre site, landing page, sistema web ou automação, o
+                briefing ajuda a escolher o formato certo.
+              </p>
             </Reveal>
           </div>
-        </Container>
-      </section>
-
-      <section className="section-space section-texture pt-0">
-        <Container className="grid gap-5 md:grid-cols-3">
-          {homeProofPoints.map((item, index) => (
-            <Reveal
-              as="article"
-              className="panel-soft interactive-panel h-full p-6"
-              delay={index * 70}
-              key={item.title}
-              variant="soft"
-            >
-              <p className="meta-label">Prova social</p>
-              <h2 className="mt-4 text-2xl text-text">{item.title}</h2>
-              <p className="mt-4 text-sm text-text/86 sm:text-base">{item.description}</p>
-            </Reveal>
-          ))}
         </Container>
       </section>
 
@@ -171,12 +151,12 @@ export default function HomePage() {
         <Container>
           <div className="flex flex-col items-start gap-5 md:flex-row md:items-end md:justify-between">
             <SectionIntro
-              description="Os serviços da WEBFORJA foram organizados para fortalecer a marca, facilitar a venda e reduzir ruídos na operação."
+              description="Escolha o formato pelo objetivo do projeto, não pelo nome da solução."
               eyebrow="Serviços"
-              title="Quatro frentes para vender melhor, fortalecer sua presença e ganhar eficiência"
+              title="Quatro frentes para captar, apresentar melhor a marca ou organizar a operação"
             />
-            <ButtonLink className="sm:min-w-[13rem]" href="/orcamento#formulario-orcamento" variant="secondary">
-              Falar sobre meu projeto
+            <ButtonLink className="sm:min-w-[12rem]" href="/servicos" variant="secondary">
+              Comparar serviços
             </ButtonLink>
           </div>
           <div className="mt-10 grid gap-5 xl:grid-cols-2">
@@ -189,38 +169,14 @@ export default function HomePage() {
 
       <section className="section-space section-texture pt-0">
         <Container>
-          <SectionIntro
-            description="Cada entrega combina direção comercial, design funcional e base técnica limpa para que o projeto seja útil hoje e sustentável depois."
-            eyebrow="Diferenciais"
-            title="O que ajuda a WEBFORJA a transformar layout bonito em ferramenta comercial"
-          />
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {homeDifferentials.map((item, index) => (
-              <Reveal
-                as="article"
-                className="panel-soft interactive-panel h-full p-6"
-                delay={index * 70}
-                key={item.title}
-                variant="soft"
-              >
-                <h3 className="text-xl text-text">{item.title}</h3>
-                <p className="mt-4 text-sm sm:text-base">{item.description}</p>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="section-space section-texture pt-0">
-        <Container>
           <div className="flex flex-col items-start gap-5 md:flex-row md:items-end md:justify-between">
             <SectionIntro
-              description="Cada case mostra o projeto no ar, o desafio do cliente e a solução criada, de forma direta e sem exagero."
+              description="Cases reais, com leitura rápida e link oficial para cada projeto."
               eyebrow="Portfólio"
-              title="Projetos publicados com contexto real para gerar confiança logo nos primeiros segundos"
+              title="Três projetos publicados para mostrar contexto, solução e nível de execução"
             />
-            <ButtonLink className="sm:min-w-[13rem]" href="/portfolio" variant="secondary">
-              Ver portfólio completo
+            <ButtonLink className="sm:min-w-[12rem]" href="/portfolio" variant="secondary">
+              Ver portfólio
             </ButtonLink>
           </div>
           <div className="mt-10 grid gap-5 xl:grid-cols-3">
@@ -232,37 +188,18 @@ export default function HomePage() {
       </section>
 
       <section className="section-space section-texture pt-0">
-        <Container className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <SectionIntro
-            description="O processo foi desenhado para reduzir ruído, alinhar expectativa e manter o projeto organizado do briefing à publicação."
-            eyebrow="Processo"
-            title="Da conversa inicial à entrega, cada etapa existe para manter clareza e ritmo de execução"
-          />
-          <ProcessTimeline steps={processSteps} />
-        </Container>
-      </section>
-
-      <section className="section-space section-texture pt-0">
-        <Container>
-          <SectionIntro
-            description="Depois da entrega, você pode assumir a operação com autonomia ou seguir com suporte contínuo quando fizer sentido."
-            eyebrow="Pós-entrega"
-            title="Continuidade sob medida para o momento do seu negócio"
-          />
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {maintenanceChoices.map((choice, index) => (
-              <Reveal
-                as="article"
-                className="panel h-full p-6 sm:p-7"
-                delay={index * 80}
-                key={choice.title}
-                variant="scale"
-              >
-                <h3 className="text-2xl text-text">{choice.title}</h3>
-                <p className="mt-4 text-base">{choice.description}</p>
-              </Reveal>
-            ))}
+        <Container className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+          <div className="space-y-5">
+            <SectionIntro
+              description="Um fluxo simples para alinhar escopo, executar e entregar sem ruído."
+              eyebrow="Processo"
+              title="Do briefing à entrega, cada etapa existe para dar previsibilidade"
+            />
+            <ButtonLink className="sm:min-w-[10rem]" href="/processo" variant="secondary">
+              Ver processo completo
+            </ButtonLink>
           </div>
+          <ProcessTimeline steps={processSteps.slice(0, 4)} />
         </Container>
       </section>
 
@@ -270,15 +207,15 @@ export default function HomePage() {
         <Container className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div className="space-y-5">
             <SectionIntro
-              description="Aqui você entende pontos essenciais sobre orçamento, personalização, manutenção e formato de projeto antes de seguir."
+              description="O essencial para entender orçamento, revisão e continuidade antes de avançar."
               eyebrow="FAQ resumido"
-              title="Dúvidas importantes antes de avançar para a proposta"
+              title="Dúvidas comuns, respondidas de forma direta"
             />
             <ButtonLink className="sm:min-w-[10rem]" href="/faq" variant="secondary">
               Ver FAQ completo
             </ButtonLink>
           </div>
-          <FaqList items={generalFaq.slice(0, 4)} />
+          <FaqList items={generalFaq.slice(0, 3)} />
         </Container>
       </section>
 
@@ -286,12 +223,12 @@ export default function HomePage() {
         <Container className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div className="space-y-6">
             <SectionIntro
-              description="Compartilhe o cenário do seu projeto para receber uma proposta mais alinhada com a sua necessidade. Mesmo sem integração final, o contato pode seguir normalmente pelo WhatsApp."
+              description="Envie o cenário do projeto para receber uma proposta mais alinhada."
               eyebrow="Orçamento"
-              title="Abra a conversa com as informações certas para receber um orçamento mais alinhado"
+              title="Um briefing direto já acelera a conversa certa"
             />
             <div className="panel p-5 sm:p-8">
-              <p className="meta-label">Como tratamos a proposta</p>
+              <p className="meta-label">Antes de enviar</p>
               <div className="mt-5 grid gap-4">
                 {budgetExpectations.map((item, index) => (
                   <Reveal
@@ -315,8 +252,10 @@ export default function HomePage() {
       </section>
 
       <CtaBand
-        description="Se você precisa de um projeto digital mais claro, mais convincente e pronto para captar contato com menos atrito, a próxima conversa pode começar agora."
-        title="Sua presença digital pode vender melhor sem parecer mais do mesmo"
+        description="Se já existe demanda, vamos definir escopo, formato e prioridade com objetividade."
+        secondaryHref="/portfolio"
+        secondaryLabel="Ver projetos"
+        title="Seu próximo projeto pode começar com um briefing direto"
       />
     </>
   );

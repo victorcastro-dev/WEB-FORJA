@@ -4,7 +4,7 @@ import { ServiceCard } from "@/components/sections/service-card";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionIntro } from "@/components/ui/section-intro";
-import { maintenanceChoices, servicePages } from "@/content/site-content";
+import { servicePages } from "@/content/site-content";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
@@ -18,60 +18,63 @@ export default function ServicesPage() {
   return (
     <>
       <PageHero
-        badge="Foco comercial"
+        badge="Escolha com critério"
         bullets={[
-          "Landing pages focadas em conversão",
-          "Sites institucionais com autoridade e clareza",
-          "Sistemas web e automações com lógica de negócio",
+          "Landing pages para campanha e captação",
+          "Sites institucionais para autoridade e confiança",
+          "Sistemas web e automações para organizar operação",
         ]}
-        description="A WEBFORJA trabalha com serviços digitais para marcas que precisam vender melhor, se apresentar com mais clareza e organizar melhor a operação."
+        description="Esta página existe para ajudar você a escolher o formato certo para o momento do negócio."
         eyebrow="Serviços"
-        title="Soluções pensadas para combinar posicionamento, captação e eficiência real"
+        title="Compare as soluções pelo problema que precisam resolver"
       />
 
       <section className="section-space section-texture pt-0">
         <Container>
           <SectionIntro
-            description="Cada frente responde a um tipo de necessidade, mas todas seguem a mesma lógica: presença forte, boa experiência e base pronta para crescer."
-            eyebrow="Visão geral"
-            title="O serviço certo depende do objetivo, do momento e da maturidade do negócio"
+            description="Cada card responde quando faz sentido, o que resolve e para quem serve."
+            eyebrow="Comparativo"
+            title="Escolha pelo objetivo do projeto, não pelo nome da entrega"
           />
           <div className="mt-10 grid gap-5 xl:grid-cols-2">
             {servicePages.map((service, index) => (
-              <ServiceCard delay={index * 80} key={service.slug} service={service} />
+              <ServiceCard delay={index * 80} key={service.slug} service={service} variant="chooser" />
             ))}
           </div>
         </Container>
       </section>
 
       <section className="section-space section-texture pt-0">
-        <Container>
-          <SectionIntro
-            description="Manutenção não é o centro da venda, mas pode entrar como continuidade quando isso ajuda o projeto a permanecer saudável."
-            eyebrow="Serviço complementar"
-            title="Depois da entrega, a continuidade pode acontecer do jeito que fizer mais sentido"
-          />
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {maintenanceChoices.map((choice, index) => (
-              <Reveal
-                as="article"
-                className="panel h-full p-6 sm:p-7"
-                delay={index * 80}
-                key={choice.title}
-                variant="scale"
-              >
-                <h3 className="text-2xl text-text">{choice.title}</h3>
-                <p className="mt-4 text-base">{choice.description}</p>
-              </Reveal>
-            ))}
-          </div>
+        <Container className="grid gap-5 md:grid-cols-3">
+          <Reveal as="article" className="panel h-full p-6" variant="scale">
+            <p className="meta-label">Campanha</p>
+            <h2 className="mt-4 text-2xl text-text">Landing page</h2>
+            <p className="mt-4 text-sm text-text/88 sm:text-base">
+              Melhor quando existe uma oferta específica e a prioridade é converter clique em contato.
+            </p>
+          </Reveal>
+          <Reveal as="article" className="panel-soft h-full p-6" delay={80} variant="soft">
+            <p className="meta-label">Apresentação</p>
+            <h2 className="mt-4 text-2xl text-text">Site institucional</h2>
+            <p className="mt-4 text-sm text-text/88 sm:text-base">
+              Melhor quando a empresa precisa explicar valor, mostrar autoridade e apoiar a venda.
+            </p>
+          </Reveal>
+          <Reveal as="article" className="panel h-full p-6" delay={160} variant="scale">
+            <p className="meta-label">Operação</p>
+            <h2 className="mt-4 text-2xl text-text">Sistema web ou automação</h2>
+            <p className="mt-4 text-sm text-text/88 sm:text-base">
+              Sistema organiza um processo próprio. Automação acelera etapas repetitivas entre ferramentas.
+            </p>
+          </Reveal>
         </Container>
       </section>
 
       <CtaBand
-        description="Se você ainda não sabe qual serviço pedir, o orçamento também ajuda a definir o formato mais adequado para o seu cenário."
-        eyebrow="Planejamento"
-        title="Vamos entender seu momento e recomendar a solução mais inteligente para a próxima etapa"
+        description="Se o cenário ainda estiver aberto, o briefing ajuda a indicar a solução mais adequada."
+        secondaryHref="/portfolio"
+        secondaryLabel="Ver projetos"
+        title="Vamos definir o formato certo antes de falar em escopo"
       />
     </>
   );

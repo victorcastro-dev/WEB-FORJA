@@ -18,44 +18,22 @@ export default function PortfolioPage() {
     <>
       <PageHero
         bullets={[
-          "Três projetos reais publicados com link oficial",
-          "Cases com objetivo, solução e destaques em leitura rápida",
-          "Portfólio pronto para crescer com novos projetos",
+          "Projetos reais publicados com link oficial",
+          "Cases organizados em contexto, problema e solução",
+          "Leitura rápida para avaliar o nível de execução",
         ]}
-        description="O portfólio da WEBFORJA mostra projetos publicados com contexto real para o visitante entender rápido o que foi construído, para quem foi feito e como a solução ajuda o negócio."
+        description="O portfólio da WEBFORJA existe para provar execução com contexto real, sem narrativa inflada."
         eyebrow="Portfólio"
-        title="Projetos reais no ar, apresentados de forma clara, comercial e confiável"
+        title="Cases publicados para mostrar o que foi feito e por que funcionou"
       />
 
       <section className="section-space section-texture pt-0">
-        <Container className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <Container>
           <SectionIntro
-            description="Cada case reúne site publicado, nicho atendido, objetivo do projeto e solução criada em linguagem direta."
+            description="Cada case resume contexto, problema, solução e destaques do projeto."
             eyebrow="Cases"
-            title="Uma vitrine de projetos reais para gerar confiança logo no primeiro olhar"
+            title="Menos introdução, mais projeto real para analisar"
           />
-          <div className="panel p-6 sm:p-8">
-            <div className="grid gap-4">
-              <div className="panel-soft p-4">
-                <p className="meta-label">Projetos publicados</p>
-                <p className="mt-2 text-sm text-text/88">
-                  Atlas Cálculos, Castro & Alves Advogados e Erick Davi Barbearia já estão no ar.
-                </p>
-              </div>
-              <div className="panel-soft p-4">
-                <p className="meta-label">Contexto de negócio</p>
-                <p className="mt-2 text-sm text-text/88">
-                  Cada card explica o cenário do cliente, a solução construída e os pontos fortes do projeto.
-                </p>
-              </div>
-              <div className="panel-soft p-4">
-                <p className="meta-label">Pronto para expansão</p>
-                <p className="mt-2 text-sm text-text/88">
-                  A estrutura do portfólio já está pronta para receber novos cases com a mesma consistência visual.
-                </p>
-              </div>
-            </div>
-          </div>
         </Container>
         <Container className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {caseStudies.map((caseStudy, index) => (
@@ -65,9 +43,10 @@ export default function PortfolioPage() {
       </section>
 
       <CtaBand
-        description="Se você quer construir um projeto com o mesmo cuidado de clareza, estrutura e apresentação, vamos conversar sobre o seu cenário."
-        eyebrow="Novo projeto"
-        title="O próximo case publicado pode nascer a partir do seu negócio"
+        description="Se você quer um projeto com o mesmo nível de critério, vamos conversar sobre o seu cenário."
+        secondaryHref="/servicos"
+        secondaryLabel="Ver serviços"
+        title="O próximo case publicado pode começar no seu briefing"
       />
     </>
   );

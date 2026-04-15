@@ -3,7 +3,7 @@ import { PageHero } from "@/components/sections/page-hero";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionIntro } from "@/components/ui/section-intro";
-import { aboutManifesto, aboutPrinciples } from "@/content/site-content";
+import { aboutManifesto, aboutPrinciples, aboutWorkingStyle } from "@/content/site-content";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
@@ -18,22 +18,22 @@ export default function AboutPage() {
     <>
       <PageHero
         bullets={[
-          "Tom institucional com proximidade",
-          "Compromisso com personalização e clareza",
-          "Foco em funcionalidade, performance e resultado",
+          "Estúdio digital premium, comercial e técnico",
+          "Projetos personalizados com critério",
+          "Direção clara da copy ao código",
         ]}
-        description="A WEBFORJA se posiciona como empresa digital moderna, com linguagem próxima, leitura profissional e cuidado real com o impacto de cada projeto no negócio."
+        description="A WEBFORJA existe para entregar projetos digitais sob medida sem cair na lógica de agência genérica."
         eyebrow="Sobre"
-        title="Uma marca feita para entregar sofisticação, clareza e tecnologia sem virar uma agência genérica"
+        title="Uma forma de trabalhar que combina clareza, critério e execução"
       />
 
       <section className="section-space section-texture pt-0">
         <Container className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
           <Reveal as="div" className="panel p-6 sm:p-8" variant="scale">
             <SectionIntro
-              description="Mais do que presença visual, a WEBFORJA quer construir estruturas digitais que façam sentido para a operação e para o posicionamento da marca."
+              description="A proposta é construir ativos digitais que ajudem a vender, apresentar melhor a marca ou organizar a operação."
               eyebrow="Manifesto"
-              title="Institucional no tom, próxima na forma de trabalhar"
+              title="Projetos personalizados com função real no negócio"
             />
             <div className="mt-6 grid gap-4">
               {aboutManifesto.map((paragraph) => (
@@ -46,7 +46,7 @@ export default function AboutPage() {
 
           <Reveal as="div" className="panel p-6 sm:p-8" delay={110} variant="soft">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-muted">
-              Compromissos da marca
+              Princípios
             </p>
             <div className="mt-5 grid gap-4">
               {aboutPrinciples.map((principle, index) => (
@@ -57,7 +57,7 @@ export default function AboutPage() {
                   key={principle.title}
                   variant="soft"
                 >
-                  <h3 className="text-xl text-text">{principle.title}</h3>
+                  <h2 className="text-xl text-text">{principle.title}</h2>
                   <p className="mt-3 text-sm sm:text-base">{principle.description}</p>
                 </Reveal>
               ))}
@@ -69,17 +69,31 @@ export default function AboutPage() {
       <section className="section-space section-texture pt-0">
         <Container className="panel p-6 sm:p-8 lg:p-10">
           <SectionIntro
-            description="A WEBFORJA acredita que um projeto digital forte precisa unir direção estratégica, clareza na apresentação, boa performance e uma base técnica que não limite o próximo passo."
-            eyebrow="Como pensamos"
-            title="Cada entrega precisa parecer premium, funcionar bem e continuar útil conforme o negócio evolui"
+            description="Na prática, isso aparece na forma como o projeto é pensado, escrito e implementado."
+            eyebrow="Como isso aparece"
+            title="O que você encontra no trabalho da WEBFORJA"
           />
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {aboutWorkingStyle.map((item, index) => (
+              <Reveal
+                as="div"
+                className="panel-soft h-full p-5"
+                delay={index * 70}
+                key={item}
+                variant="soft"
+              >
+                <p className="text-sm leading-6 text-text/88 sm:text-base">{item}</p>
+              </Reveal>
+            ))}
+          </div>
         </Container>
       </section>
 
       <CtaBand
-        description="Se essa forma de trabalhar combina com o momento da sua marca, podemos começar pelo orçamento e desenhar a próxima etapa com mais clareza."
-        eyebrow="Parceria"
-        title="Projetos personalizados fazem mais sentido quando a estratégia e a execução andam juntas"
+        description="Se essa forma de trabalhar combina com o seu momento, o próximo passo é abrir o briefing."
+        secondaryHref="/orcamento#formulario-orcamento"
+        secondaryLabel="Abrir briefing"
+        title="Projetos melhores começam com direção clara e execução bem feita"
       />
     </>
   );

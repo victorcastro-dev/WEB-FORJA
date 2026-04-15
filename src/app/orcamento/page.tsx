@@ -1,9 +1,10 @@
 import { BudgetForm } from "@/components/forms/budget-form";
+import { FaqList } from "@/components/sections/faq-list";
 import { PageHero } from "@/components/sections/page-hero";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionIntro } from "@/components/ui/section-intro";
-import { budgetExpectations } from "@/content/site-content";
+import { budgetExpectations, budgetFaq } from "@/content/site-content";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
@@ -17,24 +18,24 @@ export default function QuotePage() {
   return (
     <>
       <PageHero
-        badge="Captação pronta"
+        badge="Briefing objetivo"
         bullets={[
-          "Briefing rápido com campos essenciais",
-          "Contato pode seguir pelo WhatsApp mesmo antes da integração final",
-          "Rascunho salvo no navegador para evitar perda de informações",
+          "Preencha só o essencial para eu entender o cenário",
+          "Se ainda houver dúvida sobre o formato, eu ajudo a definir",
+          "O contato pode continuar pelo canal disponível no momento",
         ]}
-        description="Esta etapa ajuda a entender seu projeto com clareza para montar uma proposta coerente, sem empurrar uma solução genérica."
+        description="Preencha o briefing e eu retorno com a direção mais adequada para o projeto."
         eyebrow="Orçamento"
-        title="Abra a conversa com as informações certas para receber uma proposta mais alinhada ao que o negócio precisa"
+        title="Orçamento rápido de entender e simples de enviar"
       />
 
       <section className="section-space section-texture pt-0">
         <Container className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
           <div className="space-y-6">
             <SectionIntro
-              description="A WEBFORJA trabalha com orçamento personalizado. Quanto mais claro for o cenário, melhor fica a proposta e o direcionamento do projeto."
-              eyebrow="Como avaliamos"
-              title="O que você precisa saber antes de enviar"
+              description="Envie o contexto do projeto e as prioridades."
+              eyebrow="Antes do formulário"
+              title="O suficiente para eu montar uma proposta coerente"
             />
             <Reveal as="div" className="panel p-6 sm:p-8" variant="soft">
               <div className="grid gap-4">
@@ -47,24 +48,27 @@ export default function QuotePage() {
                     variant="soft"
                   >
                     <span className="mt-1 h-2.5 w-2.5 rounded-full bg-primary" />
-                    <p className="text-sm text-text/90">{item}</p>
+                    <p className="text-sm leading-6 text-text/90">{item}</p>
                   </Reveal>
                 ))}
               </div>
-            </Reveal>
-            <Reveal as="div" className="panel p-6 sm:p-8" delay={100} variant="soft">
-              <h3 className="text-xl text-text">O formulário não trava você em uma escolha definitiva.</h3>
-              <p className="mt-4 text-base">
-                Se ainda existir dúvida entre site, landing page, sistema ou automação, marque
-                &quot;não sei ao certo&quot;. O orçamento também ajuda a identificar o formato mais
-                inteligente para o seu cenário.
-              </p>
             </Reveal>
           </div>
 
           <Reveal as="div" delay={140} variant="scale">
             <BudgetForm />
           </Reveal>
+        </Container>
+      </section>
+
+      <section className="section-space section-texture pt-0">
+        <Container className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+          <SectionIntro
+            description="Os detalhes comerciais ficam aqui para não atrapalhar o envio do briefing."
+            eyebrow="FAQ de orçamento"
+            title="O que normalmente você precisa saber antes de enviar"
+          />
+          <FaqList items={budgetFaq} />
         </Container>
       </section>
     </>
