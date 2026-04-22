@@ -34,6 +34,7 @@ function CaseBadge({
 
 export function CaseStudyCard({ caseStudy, compact = false, delay = 0 }: CaseStudyCardProps) {
   const highlightItems = caseStudy.highlights.slice(0, compact ? 2 : 3);
+  const hasDedicatedCasePage = Boolean(caseStudy.casePageHref);
 
   return (
     <Reveal
@@ -121,7 +122,27 @@ export function CaseStudyCard({ caseStudy, compact = false, delay = 0 }: CaseStu
         </div>
 
         <div className="cta-cluster cta-cluster-tight mt-auto pt-6">
-          {caseStudy.url ? (
+          {!compact && hasDedicatedCasePage ? (
+            <>
+              <ButtonLink
+                className="sm:min-w-[9.5rem]"
+                href={caseStudy.casePageHref!}
+                size="md"
+                variant="primary"
+              >
+                Abrir case
+              </ButtonLink>
+              <ButtonLink
+                className="sm:min-w-[9.5rem]"
+                external
+                href={caseStudy.url}
+                size="md"
+                variant="secondary"
+              >
+                Abrir site
+              </ButtonLink>
+            </>
+          ) : caseStudy.url ? (
             <>
               <ButtonLink
                 className={compact ? "sm:min-w-[8.5rem]" : "sm:min-w-[9.5rem]"}

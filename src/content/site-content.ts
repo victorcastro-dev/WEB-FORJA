@@ -62,6 +62,7 @@ export type CaseStudy = {
   imageSrc: string;
   imageAlt: string;
   url: string;
+  casePageHref?: string;
 };
 
 const siteUrl = siteRuntimeConfig.siteUrl;
@@ -499,6 +500,7 @@ export const caseStudies = [
     imageSrc: "/portfolio/erick-davi-barbearia.png",
     imageAlt: "Screenshot do site Erick Davi Barbearia",
     url: "https://www.erickdavibarbearia.com.br/",
+    casePageHref: "/sistema-barbearia",
   },
 ] satisfies CaseStudy[];
 

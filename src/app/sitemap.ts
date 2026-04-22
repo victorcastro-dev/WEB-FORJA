@@ -6,6 +6,7 @@ const routes = [
   "/",
   "/servicos",
   "/landing-pages",
+  "/sistema-barbearia",
   "/sites-institucionais",
   "/sistemas-web",
   "/automacoes",
@@ -26,4 +27,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "/" ? 1 : 0.8,
   }));
 }
-
